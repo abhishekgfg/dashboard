@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/HomePage.css";
+import FeesAndSeatsSection from "./FeesAndSeatsSection";
 
 const HomePage = () => {
   return (
@@ -85,6 +86,104 @@ const HomePage = () => {
   </div>
 </div>
 </div>
+
+{/* 📈 Revenue & Expenses Section */}
+<div className="revenue-expenses-container">
+  <div className="revenue-box">
+    <h2>Revenue Section :-</h2>
+    <p>Today's : <strong>₹0.00</strong></p>
+    <p>Yesterday's : <strong>₹1,207.35</strong></p>
+    <p>Current Month's : <strong>₹2,881.45</strong></p>
+
+    <h2 className="payment-title">Payment Collection</h2>
+    <div className="payment-type">
+      <div className="cash">Cash : <strong>₹2,022.00</strong></div>
+      <div className="online">Online : <strong>₹859.45</strong></div>
+    </div>
+  </div>
+
+  <div className="expense-box">
+    <h2>Recent Expenses</h2>
+    <p>Total for Today: <strong>0</strong></p>
+    <p>Total for Yesterday: <strong>0</strong></p>
+    <p>Total for This Month: <strong>0</strong></p>
+
+    <table className="expense-table">
+      <thead>
+        <tr>
+          <th>S.No.</th>
+          <th>Purpose</th>
+          <th>Subject</th>
+          <th>Amount</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>1</td><td>Personal</td><td>Nasta</td><td>20.00</td><td>2025-11-13</td></tr>
+        <tr><td>2</td><td>Library</td><td>Tytfguggyuyu77yuy</td><td>50.00</td><td>2025-06-29</td></tr>
+        <tr><td>3</td><td>Library</td><td>Tytfguggyuyu77yuy</td><td>50.00</td><td>2025-06-29</td></tr>
+        <tr><td>4</td><td>Library</td><td>Fan</td><td>100.00</td><td>2025-06-23</td></tr>
+        <tr><td>5</td><td>Library</td><td>Chai</td><td>40.00</td><td>2025-04-30</td></tr>
+      </tbody>
+    </table>
+    <button className="more-button">More</button>
+  </div>
+</div>
+
+{/* 💳 Payment Tables Section */}
+<div className="payment-tables">
+  <div className="payment-card">
+    <h2>Recent Payments</h2>
+    <table className="payment-table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Student Name</th>
+          <th>Fee Amount</th>
+          <th>Date Submitted</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>2773</td><td>Rahul Singh</td><td>₹600.00</td><td>2025-07-10 17:49:08</td></tr>
+        <tr><td>1090</td><td>Udit gupta</td><td>₹600.00</td><td>2025-07-10 17:27:31</td></tr>
+        <tr><td>2567</td><td>Dileep Vijoliya</td><td>₹2.10</td><td>2025-07-10 08:24:15</td></tr>
+        <tr><td>2172</td><td>Dilip</td><td>₹1.05</td><td>2025-07-10 08:22:28</td></tr>
+        <tr><td>2172</td><td>Dilip</td><td>₹2.10</td><td>2025-07-10 08:21:15</td></tr>
+        
+      </tbody>
+    </table>
+    <button className="more-button">More</button>
+  </div>
+
+  <div className="payment-card">
+    <h2>Pending Payments</h2>
+    <table className="payment-table">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Due Date</th>
+          <th>Passed</th>
+          <th>Fee</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>12</td>
+          <td>Dia Sharma</td>
+          <td>2025-03-01</td>
+          <td>132</td>
+          <td>600.00</td>
+        </tr>
+      </tbody>
+    </table>
+    <button className="more-button">More</button>
+ 
+  </div>
+</div>
+
+
+
     </div>
   );
 };
