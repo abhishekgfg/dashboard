@@ -1,6 +1,5 @@
 import React from "react";
 import "../styles/HomePage.css";
-import FeesAndSeatsSection from "./FeesAndSeatsSection";
 
 const HomePage = () => {
   return (
