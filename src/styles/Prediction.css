@@ -1,0 +1,63 @@
+.prediction-container {
+  padding: 40px;
+  background: #fff;
+  border-radius: 10px;
+  max-width: 1200px;
+  margin: auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.prediction-title {
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 30px;
+}
+
+.threshold-analysis-grid {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+}
+
+.threshold-table table {
+  width: 280px;
+  border-collapse: collapse;
+  font-size: 16px;
+  text-align: center;
+  border: 1px solid #ddd;
+}
+
+.threshold-table th,
+.threshold-table td {
+  padding: 12px;
+  border: 1px solid #ddd;
+}
+
+.threshold-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+
+.threshold-chart {
+  flex-grow: 1;
+  min-width: 300px;
+}
+
+.chart-label {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.prediction-container {
+  max-height: 90vh;
+  overflow-y: auto;
+}

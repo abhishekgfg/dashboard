@@ -133,3 +133,121 @@
     padding-top: 56px; /* Prevent overlap under header */
   }
 }
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: #333; /* default text color */
+  text-decoration: none; /* remove underline */
+  font-size: 16px;
+  transition: background 0.2s ease;
+}
+
+.menu-item:hover {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.menu-item svg {
+  margin-right: 10px;
+  font-size: 18px;
+}
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.3s ease;
+}
+
+.menu-item:hover {
+  background-color: #f0f0f0;
+}
+
+.menu-item.active {
+  background-color: #e8f0fe;
+  font-weight: bold;
+  border-left: 4px solid #007bff;
+  color: #007bff;
+  border-radius: 4px;
+}
+
+.icon {
+  margin-right: 10px;
+  font-size: 18px;
+}
+
+/* Unique icon colors */
+.icon.dashboard       { color: #1E90FF; }
+.icon.prediction      { color: #28A745; }
+.icon.demo            { color: #FF5722; }
+.icon.add-student     { color: #9C27B0; }
+.icon.student-detail  { color: #F44336; }
+.icon.fee             { color: #3F51B5; }
+.icon.pending-fee     { color: #607D8B; }
+.icon.seats           { color: #009688; }
+.icon.expenses        { color: #E91E63; }
+.icon.revenue         { color: #00BCD4; }
+.icon.monthly-fee     { color: #8BC34A; }
+.icon.unseated        { color: #795548; }
+.icon.bulk-mail       { color: #CDDC39; }
+.icon.todo            { color: #03A9F4; }
+.icon.messenger       { color: #FF9800; }
+.icon.add-notice      { color: #673AB7; }
+.icon.view-notice     { color: #4CAF50; }
+.icon.birthday        { color: #FFC107; }
+.icon.students-new    { color: #FF4081; }
+.icon.attendance      { color: #009688; }
+.icon.staffs          { color: #00BCD4; }
+.icon.usernames       { color: #9E9E9E; }
+.icon.settings        { color: #607D8B; }
+
+/* Mobile header styles */
+.mobile-dashboard-header {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+    background: #007bff;
+    color: white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .sidebar-container {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    width: 260px;
+    height: 100vh;
+    background: white;
+    overflow-y: auto;
+    transition: left 0.3s ease;
+    z-index: 999;
+  }
+
+  .sidebar-container.open {
+    left: 0;
+  }
+
+  .sidebar-close-btn {
+    font-size: 24px;
+    text-align: right;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .main-content {
+    margin-top: 60px; /* for mobile header space */
+  }
+}

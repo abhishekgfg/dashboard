@@ -8,13 +8,14 @@ import {
 import { MdOutlineEventNote } from "react-icons/md";
 import { IoMdPersonAdd } from "react-icons/io";
 import "../styles/Sidebar.css";
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
-      {/* ==== Mobile Header (fixed) ==== */}
+      {/* ==== Mobile Header ==== */}
       <div className="mobile-dashboard-header">
         <FaBars className="mobile-header-icon" onClick={() => setIsOpen(true)} />
         <div className="mobile-header-title">Dashboard</div>
@@ -26,10 +27,8 @@ const Sidebar = () => {
 
       {/* ==== Sidebar ==== */}
       <div className={`sidebar-container ${isOpen ? "open" : ""}`}>
-        {/* Close button on mobile */}
         <div className="sidebar-close-btn" onClick={() => setIsOpen(false)}>×</div>
 
-        {/* Profile */}
         <div className="profile-section">
           <FaUserCircle className="profile-icon" />
           <div className="profile-info">
@@ -38,37 +37,46 @@ const Sidebar = () => {
           </div>
         </div>
 
-        {/* Sidebar Menu */}
         <div className="sidebar-menu">
-          <div className="menu-item"><FaTachometerAlt /> Dashboard</div>
-          <div className="menu-item"><FaRupeeSign /> Prediction</div>
-          <div className="menu-item"><IoMdPersonAdd /> Add Demo</div>
-          <div className="menu-item"><IoMdPersonAdd /> Add Student</div>
-          <div className="menu-item"><FaUsers /> Student Detail</div>
-          <div className="menu-item"><FaClipboardList /> Manage Fee</div>
-          <div className="menu-item"><FaClipboardList /> Pending Fee</div>
-          <div className="menu-item"><FaUsers /> Seats</div>
-          <div className="menu-item"><FaRupeeSign /> Expenses</div>
-          <div className="menu-item"><FaRupeeSign /> Revenue</div>
-          <div className="menu-item"><FaRupeeSign /> Monthly Fee</div>
-          <div className="menu-item"><FaUsers /> Unseated Students</div>
-          <div className="menu-item"><FaMailBulk /> Bulk Mail</div>
-          <div className="menu-item"><FaEnvelopeOpenText /> To Do List</div>
-          <div className="menu-item"><FaCommentDots /> Messenger</div>
-          <div className="menu-item"><MdOutlineEventNote /> Add Notice</div>
-          <div className="menu-item"><FaRupeeSign /> View Notices</div>
-          <div className="menu-item"><FaBirthdayCake /> Birthday Wish</div>
-          <div className="menu-item"><FaRupeeSign /> Students (New)</div>
-          <div className="menu-item"><FaCalendarCheck /> Attendance</div>
-          <div className="menu-item"><FaChalkboardTeacher /> Staffs Detail</div>
-          <div className="menu-item"><FaUserEdit /> Usernames</div>
-          <div className="menu-item"><FaCogs /> Settings</div>
+          <NavLink to="/" className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`}>
+            <span className="icon dashboard"><FaTachometerAlt /></span> Dashboard
+          </NavLink>
+          <NavLink to="/future-projection" className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`}>
+            <span className="icon prediction"><FaRupeeSign /></span> Prediction
+          </NavLink>
+          <NavLink to="/Demo" className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`}>
+            <span className="icon demo"><IoMdPersonAdd /></span> Add Demo
+          </NavLink>
+          <NavLink to="/add-student-detail" className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`}>
+            <span className="icon add-student"><IoMdPersonAdd /></span> Add Student
+          </NavLink>
+          <NavLink to="/student/:id" className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`}>
+            <span className="icon student-detail"><FaUsers /></span> Student Detail
+          </NavLink>
+
+          <div className="menu-item"><span className="icon fee"><FaClipboardList /></span> Manage Fee</div>
+          <div className="menu-item"><span className="icon pending-fee"><FaClipboardList /></span> Pending Fee</div>
+          <div className="menu-item"><span className="icon seats"><FaUsers /></span> Seats</div>
+          <div className="menu-item"><span className="icon expenses"><FaRupeeSign /></span> Expenses</div>
+          <div className="menu-item"><span className="icon revenue"><FaRupeeSign /></span> Revenue</div>
+          <div className="menu-item"><span className="icon monthly-fee"><FaRupeeSign /></span> Monthly Fee</div>
+          <div className="menu-item"><span className="icon unseated"><FaUsers /></span> Unseated Students</div>
+          <div className="menu-item"><span className="icon bulk-mail"><FaMailBulk /></span> Bulk Mail</div>
+          <div className="menu-item"><span className="icon todo"><FaEnvelopeOpenText /></span> To Do List</div>
+          <div className="menu-item"><span className="icon messenger"><FaCommentDots /></span> Messenger</div>
+          <div className="menu-item"><span className="icon add-notice"><MdOutlineEventNote /></span> Add Notice</div>
+          <div className="menu-item"><span className="icon view-notice"><FaRupeeSign /></span> View Notices</div>
+          <div className="menu-item"><span className="icon birthday"><FaBirthdayCake /></span> Birthday Wish</div>
+          <div className="menu-item"><span className="icon students-new"><FaRupeeSign /></span> Students (New)</div>
+          <div className="menu-item"><span className="icon attendance"><FaCalendarCheck /></span> Attendance</div>
+          <div className="menu-item"><span className="icon staffs"><FaChalkboardTeacher /></span> Staffs Detail</div>
+          <div className="menu-item"><span className="icon usernames"><FaUserEdit /></span> Usernames</div>
+          <div className="menu-item"><span className="icon settings"><FaCogs /></span> Settings</div>
         </div>
       </div>
 
-      {/* Main content wrapper to add padding on mobile */}
       <div className="main-content">
-        {/* Put your main content here */}
+        {/* Page content goes here */}
       </div>
     </>
   );
