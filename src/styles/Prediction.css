@@ -2,7 +2,7 @@
   padding: 40px;
   background: #fff;
   border-radius: 10px;
-  max-width: 1200px;
+  /* max-width: 1200px; */
   margin: auto;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
@@ -21,7 +21,7 @@
 }
 
 .threshold-table table {
-  width: 280px;
+  /* width: 280px; */
   border-collapse: collapse;
   font-size: 16px;
   text-align: center;
@@ -41,7 +41,7 @@
 
 .threshold-chart {
   flex-grow: 1;
-  min-width: 300px;
+  /* min-width: 300px; */
 }
 
 .chart-label {
@@ -58,6 +58,6 @@ html, body {
 }
 
 .prediction-container {
-  max-height: 90vh;
+  /* max-height: 90vh; */
   /* overflow-y: auto; */
 }

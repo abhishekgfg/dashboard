@@ -1,0 +1,87 @@
+.revenue-report-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+h2 {
+  color: #1a73e8;
+  margin-bottom: 20px;
+}
+
+.dashboard-btn {
+  float: right;
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.filter-section {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.filter-section select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.view-report-btn {
+  background-color: #1a73e8;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.summary-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.summary-card {
+  background: #196764;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  width: 30%;
+}
+
+.summary-card h3 {
+  margin: 0 0 10px;
+  color: #ffffff;
+}
+
+.summary-card p {
+  margin: 0;
+  font-size: 1.2em;
+  color: #fff8f8;
+}
+
+.details-section h3 {
+  color: #eeeff1;
+  margin-bottom: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #934949;
+}
+
+th {
+  background-color: #c43333;
+}
+
+

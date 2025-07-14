@@ -1,0 +1,127 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 90%;
+  margin: 20px auto;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.header h2 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+.header-actions input {
+  padding: 5px;
+  width: 200px;
+  border: none;
+  border-radius: 3px;
+  margin-right: 10px;
+  background-color: #fff;
+  color: #333;
+}
+
+.add-expense-btn {
+  padding: 5px 15px;
+  background-color: #4CAF50; /* Green */
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.add-expense-btn:hover {
+  background-color: #45a049;
+}
+
+.dashboard-btn {
+  padding: 5px 15px;
+  background-color: #008CBA; /* Blue */
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.dashboard-btn:hover {
+  background-color: #007B9A;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+th {
+  background-color: #007bff; /* Blue */
+  color: #fff;
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+tr:nth-child(odd) {
+  background-color: #fff;
+}
+
+.delete-btn {
+  background-color: #ff4500; /* Orange-red */
+  color: #fff;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.delete-btn:hover {
+  background-color: #cc3700;
+}
+
+.expense-summary {
+  background-color: #f0f8ff;
+  border: 1px solid #b0d4f1;
+  padding: 10px 20px;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 5px;
+  color: #333;
+}

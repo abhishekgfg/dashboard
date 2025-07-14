@@ -1,0 +1,129 @@
+.todo-list {
+  padding: 20px;
+  background-color: #edfcfc;
+  color: #fff;
+  font-family: Arial, sans-serif;
+  min-height: 100vh;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  color: #ffca28;
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.dashboard-btn {
+  background-color: #00bcd4;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.task-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.task-form button {
+  background-color: #1a73e8;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-section {
+  margin-bottom: 20px;
+}
+
+.filter-section select {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #ffffff;
+  color: #0e0909;
+  border: none;
+  cursor: pointer;
+}
+
+.tasks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.task-card {
+  background: #fff;
+  color: #333;
+  padding: 15px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.task-content h3 {
+  margin: 0 0 10px;
+  font-size: 1.2em;
+}
+
+.task-content p {
+  margin: 5px 0;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.status {
+  padding: 5px 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 5px;
+}
+
+.edit-btn {
+  background-color: #ffca28;
+  color: #333;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.complete-btn {
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: #f44336;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}

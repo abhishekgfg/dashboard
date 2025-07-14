@@ -1,0 +1,131 @@
+.monthly-fee-report {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header h2 {
+  color: #fff;
+  background-color: #1a73e8;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 0;
+  font-size: 16px;
+}
+
+.header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.header-actions select {
+  padding: 10px;
+  border: 1px solid #ffffff;
+  border-radius: 5px;
+}
+
+.header-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.filter-btn {
+  background-color: #1a73e8;
+  color: white;
+}
+
+.header-actions input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.dashboard-btn {
+  background-color: #00bcd4;
+  color: white;
+}
+
+.summary-section {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.summary-card {
+  background: #1b6a8d;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  width: 30%;
+}
+
+.summary-card h3 {
+  margin: 0 0 10px;
+  color: #ffffff;
+}
+
+.summary-card p {
+  margin: 0;
+  font-size: 1.2em;
+  color: #ffffff;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: #1a73e8;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+td button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  ;
+}
+
+.send-btn {
+  background-color: #e57373;
+  color: white;
+
+}
+.invoice-btn {
+  background-color: #42a5f5;
+  color: white;
+  margin-top: 10px;
+  
+}
+
+.mode {
+  padding: 2px 8px;
+  border-radius: 10px;
+  color: white;
+}
+
+.mode.cash {
+  background-color: #4caf50;
+}
+
+.mode.online {
+  background-color: #f06292;
+}

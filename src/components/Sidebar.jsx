@@ -54,18 +54,63 @@ const Sidebar = () => {
             <span className="icon student-detail"><FaUsers /></span> Student Detail
           </NavLink>
 
-          <div className="menu-item"><span className="icon fee"><FaClipboardList /></span> Manage Fee</div>
-          <div className="menu-item"><span className="icon pending-fee"><FaClipboardList /></span> Pending Fee</div>
-          <div className="menu-item"><span className="icon seats"><FaUsers /></span> Seats</div>
-          <div className="menu-item"><span className="icon expenses"><FaRupeeSign /></span> Expenses</div>
-          <div className="menu-item"><span className="icon revenue"><FaRupeeSign /></span> Revenue</div>
-          <div className="menu-item"><span className="icon monthly-fee"><FaRupeeSign /></span> Monthly Fee</div>
-          <div className="menu-item"><span className="icon unseated"><FaUsers /></span> Unseated Students</div>
+         <NavLink
+  to="/manage-fee"
+  className={({ isActive }) =>
+    `menu-item${isActive ? ' active' : ''}`
+  }
+>
+  <span className="icon fee"><FaClipboardList /></span> Manage Fee
+</NavLink>
+
+         <NavLink to="/pending-fee" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}><span className="icon pending-fee"><FaClipboardList /></span> Pending Fee</NavLink>
+
+          <NavLink to="/seat-allotment" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}><span className="icon seats"><FaUsers /></span> Seats</NavLink>
+
+         <NavLink to="/expense" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}>
+  <span className="icon expenses"><FaRupeeSign /></span> Expenses
+</NavLink>
+
+         <NavLink
+  to="/revenue"
+  className={({ isActive }) =>
+    `menu-item${isActive ? ' active' : ''}`
+  }
+>
+  <span className="icon revenue"><FaRupeeSign /></span> Revenue
+</NavLink>
+
+<NavLink
+  to="/monthly-fee"
+  className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}
+>
+  <span className="icon monthly-fee"><FaRupeeSign /></span> Monthly Fee
+</NavLink>
+
+<NavLink
+  to="/students-without-seats"
+  className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}
+>
+  <span className="icon unseated"><FaUsers /></span> Unseated Students
+</NavLink>
+         
           <div className="menu-item"><span className="icon bulk-mail"><FaMailBulk /></span> Bulk Mail</div>
-          <div className="menu-item"><span className="icon todo"><FaEnvelopeOpenText /></span> To Do List</div>
+
+
+
+        <NavLink
+  to="/todo-list"
+  className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}
+>
+  <span className="icon todo"><FaEnvelopeOpenText /></span> To Do List
+</NavLink>
+
           <div className="menu-item"><span className="icon messenger"><FaCommentDots /></span> Messenger</div>
-          <div className="menu-item"><span className="icon add-notice"><MdOutlineEventNote /></span> Add Notice</div>
-          <div className="menu-item"><span className="icon view-notice"><FaRupeeSign /></span> View Notices</div>
+         <NavLink to="/add-notice" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}>
+  <span className="icon add-notice"><MdOutlineEventNote /></span> Notice
+</NavLink>
+
+          {/* <div className="menu-item"><span className="icon view-notice"><FaRupeeSign /></span> View Notices</div> */}
           <div className="menu-item"><span className="icon birthday"><FaBirthdayCake /></span> Birthday Wish</div>
           <div className="menu-item"><span className="icon students-new"><FaRupeeSign /></span> Students (New)</div>
           <div className="menu-item"><span className="icon attendance"><FaCalendarCheck /></span> Attendance</div>
