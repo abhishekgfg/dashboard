@@ -1,7 +1,35 @@
 import React from "react";
 import "../styles/HomePage.css";
+import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 const HomePage = () => {
+ 
+  const seats = [
+    1, 2, 3, 5, 6, 7, 8, 9, 10, 16, 17, 18, 101, 102, 103, 104, 105, 12,
+  ];
+
+  const feeData = [
+    { day: 2, amount: 1300 },
+    { day: 10, amount: 600 },
+    { day: 11, amount: 600 },
+    { day: 14, amount: 1350 },
+    { day: 17, amount: 900 },
+    { day: 24, amount: 200 },
+    { day: 28, amount: 550 },
+  ];
+
+  const peakDays = [
+    { date: "Jul 14", amount: "₹1,300.00" },
+    { date: "Jul 2", amount: "₹1,239.00" },
+    { date: "Jul 17", amount: "₹922.00" },
+  ];
+
+  const lowDays = [
+    { date: "Jul 5", amount: "₹2.10" },
+    { date: "Jul 23", amount: "₹250.00" },
+    { date: "Jul 27", amount: "₹500.00" },
+  ];
+
   return (
     <div className="homepage-container">
       {/* 🔍 Search + Buttons Row */}
@@ -180,7 +208,112 @@ const HomePage = () => {
  
   </div>
 </div>
+<div class="due-fees-section">
+  <div class="due-fees-header">
+    <h2>🚨 Students with Due Fees</h2>
+  </div>
+  <div class="due-fees-card">
+    <table class="due-fees-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Mobile</th>
+          <th>Remaining Due</th>
+          <th>Expiration Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>19</td>
+          <td>Advik Sharma</td>
+          <td>advik.sharma@example.com</td>
+          <td>9876543219</td>
+          <td>₹1</td>
+          <td>2025-09-17</td>
+        </tr>
+        <tr>
+          <td>1109</td>
+          <td>Shivam Rajak II</td>
+          <td>shivamrajak@gmail.com</td>
+          <td>7172737475</td>
+          <td>₹1020</td>
+          <td>2026-01-23</td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td>Anika Patel</td>
+          <td>anika.patel@example.com</td>
+          <td>9876543216</td>
+          <td>₹10</td>
+          <td>2032-04-04</td>
+        </tr>
+      </tbody>
+    </table>
+    <button class="view-more-btn">View More</button>
+  </div>
+</div>
+ <div className="section-wrapper">
+      {/* Seats Availability */}
+      <div className="seat-availability-box">
+        <h2>Seats Availability</h2>
+        <div className="seat-grid">
+          {seats.map((seat) => (
+            <div className="seat-card" key={seat}>
+              <strong>Seat {seat}</strong>
+              <span className="available-text">Available</span>
+            </div>
+          ))}
+        </div>
+        <button className="more-btn">More</button>
+      </div>
 
+      {/* Chart and Peak/Low */}
+      <div className="chart-and-days-row">
+        {/* Chart */}
+        <div className="chart-box">
+          <ResponsiveContainer width="100%" height={300}>
+            <BarChart data={feeData}>
+              <XAxis dataKey="day" />
+              <YAxis />
+              <Tooltip />
+              <Bar dataKey="amount" fill="#4fc3f7" />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
+
+        {/* Peak Days */}
+       <div className="peaklow-column">
+  {/* Peak Days */}
+  <div className="peaklow-card">
+    <h3 className="peak-title">Peak Days</h3>
+    <ul>
+      {peakDays.map((item, i) => (
+        <li key={i}>
+          <span>{item.date}</span>
+          <span className="">{item.amount}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+
+  {/* Low Days */}
+  <div className="peaklow-card">
+    <h3 className="low-title">Low Days</h3>
+    <ul>
+      {lowDays.map((item, i) => (
+        <li key={i}>
+          <span>{item.date}</span>
+          <span className="">{item.amount}</span>
+        </li>
+      ))}
+    </ul>
+  </div>
+</div>
+
+      </div>
+    </div>
 
 
     </div>

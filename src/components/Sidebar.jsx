@@ -32,8 +32,8 @@ const Sidebar = () => {
         <div className="profile-section">
           <FaUserCircle className="profile-icon" />
           <div className="profile-info">
-            <h4>Kuldeep Jha</h4>
-            <p>kuldeeprajput604@gmail.com</p>
+            <h4>Abhishek Kumar</h4>
+            <p>abhishek8579013@gmail.com</p>
           </div>
         </div>
 
@@ -111,12 +111,40 @@ const Sidebar = () => {
 </NavLink>
 
           {/* <div className="menu-item"><span className="icon view-notice"><FaRupeeSign /></span> View Notices</div> */}
-          <div className="menu-item"><span className="icon birthday"><FaBirthdayCake /></span> Birthday Wish</div>
-          <div className="menu-item"><span className="icon students-new"><FaRupeeSign /></span> Students (New)</div>
-          <div className="menu-item"><span className="icon attendance"><FaCalendarCheck /></span> Attendance</div>
-          <div className="menu-item"><span className="icon staffs"><FaChalkboardTeacher /></span> Staffs Detail</div>
+         <NavLink
+  to="/birthday-wish"
+  className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}
+>
+  <span className="icon birthday"><FaBirthdayCake /></span> Birthday Wish
+</NavLink>
+
+         <NavLink to="/new-students" className="menu-item" activeclassname="active">
+  <span className="icon students-new">
+    <FaRupeeSign />
+  </span>
+  Students (New)
+</NavLink>
+
+         <NavLink
+  to="/attendance-report"
+  className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}
+>
+  <span className="icon attendance"><FaCalendarCheck /></span> Attendance
+</NavLink>
+          <NavLink
+  to="/staffs-detail"
+  className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}
+>
+  <span className="icon staffs"><FaChalkboardTeacher /></span> Staffs Detail
+</NavLink>
           <div className="menu-item"><span className="icon usernames"><FaUserEdit /></span> Usernames</div>
-          <div className="menu-item"><span className="icon settings"><FaCogs /></span> Settings</div>
+          <NavLink
+  to="/settings"
+  className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}
+>
+  <span className="icon settings"><FaCogs /></span> Settings
+</NavLink>
+
         </div>
       </div>
 

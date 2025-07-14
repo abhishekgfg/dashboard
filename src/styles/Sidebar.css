@@ -67,10 +67,11 @@
 @media (max-width: 768px) {
   .mobile-dashboard-header {
     position: fixed;
+    
     top: 0;
     left: 0;
     right: 0;
-    height: 76px;
+    height: 50px;
     background: #ffffff;
     display: flex;
     align-items: center;
@@ -95,6 +96,7 @@
   .mobile-header-icon {
     font-size: 22px;
     cursor: pointer;
+    margin-right: 40px;
   }
 
   .mobile-header-icon.moon { color: #fbbf24; }

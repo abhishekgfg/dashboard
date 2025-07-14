@@ -2,7 +2,7 @@
   height: 100vh;
   /* overflow-y: auto; */
   padding: 20px;
-  padding-left: 40px; /* 👈 added extra left space */
+  /* padding-left: 40px; 👈 added extra left space */
   font-family: "Segoe UI", sans-serif;
   background: #f4f7fe;
   box-sizing: border-box;
@@ -256,7 +256,7 @@
   }
 
   .search-bar {
-    width: 100%;
+    
     padding: 12px 14px;
     font-size: 14px;
     border-radius: 10px;
@@ -305,7 +305,7 @@
   .wallet-card {
     padding: 18px;
     border-radius: 18px;
-    min-width: 90%;
+    
     background-size: cover;
   }
 
@@ -369,6 +369,8 @@
     display: none;
   }
 }
+
+
 
 
 
@@ -474,7 +476,7 @@
 
   .revenue-box,
   .expense-box {
-    width: 90%;
+    width: 100%;
   }
 
   .payment-title {
@@ -564,3 +566,415 @@
 }
 
 
+/* Existing responsive styles remain unchanged */
+@media (max-width: 768px) {
+  .revenue-expenses-container {
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .revenue-box,
+  .expense-box {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .payment-title {
+    text-align: center;
+    font-size: 18px;
+  }
+
+  .payment-type {
+    font-size: 15px;
+  }
+
+  .expense-table {
+    width: 100%;
+    font-size: 14px;
+    overflow-x: auto;
+    display: block;
+  }
+
+  .more-button {
+    width: 100%;
+    margin-left: 0;
+    text-align: center;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .payment-tables {
+    flex-direction: column;
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  .payment-card {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .payment-table {
+    font-size: 14px;
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .payment-table thead {
+    font-size: 14px;
+  }
+
+  .payment-table th,
+  .payment-table td {
+    padding: 8px 12px;
+  }
+
+  .more-button {
+    width: 100%;
+    margin: 10px 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .revenue-box h2,
+  .expense-box h2,
+  .payment-card h2 {
+    font-size: 18px;
+  }
+
+  .payment-title {
+    font-size: 16px;
+  }
+
+  .payment-type .cash,
+  .payment-type .online {
+    padding: 8px;
+  }
+
+  .payment-table th,
+  .payment-table td {
+    padding: 6px 10px;
+  }
+
+  .more-button {
+    font-size: 13px;
+    padding: 8px;
+  }
+}
+
+
+
+
+
+.due-fees-section {
+ 
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f9f9fb;
+  
+}
+
+.due-fees-header {
+  background: linear-gradient(to right, #8b0000, #b30000); /* dark to bright red */
+  color: white;
+  padding: 16px 30px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.due-fees-header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.due-fees-card {
+  background-color: white;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
+  width: 100%;
+}
+
+.due-fees-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.due-fees-table th,
+.due-fees-table td {
+  padding: 12px 16px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.due-fees-table thead {
+  background-color: #ffe5e5;
+  color: #c9b6b6;
+  font-weight: bold;
+}
+
+.view-more-btn {
+  margin-top: 15px;
+  background-color: #c62828;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.view-more-btn:hover {
+  background-color: #a30000;
+}
+@media (max-width: 768px) {
+  .due-fees-header {
+    padding: 12px 20px;
+    border-radius: 8px;
+  }
+
+  .due-fees-header h2 {
+    font-size: 18px;
+  }
+
+  .due-fees-card {
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  .due-fees-table {
+    font-size: 14px;
+    min-width: 600px; /* Enable horizontal scroll */
+  }
+
+  .view-more-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .due-fees-header {
+    padding: 10px 16px;
+  }
+
+  .due-fees-header h2 {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .due-fees-card {
+    padding: 12px;
+  }
+
+  .view-more-btn {
+    padding: 10px;
+    font-size: 13px;
+  }
+}
+
+
+
+
+
+
+.section-wrapper {
+  padding: 20px;
+}
+
+/* Seats Availability */
+.seat-availability-box {
+  background: #f8f4f4;
+  color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.seat-availability-box h2 {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.seat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  gap: 12px;
+  justify-items: center;
+}
+
+
+.seat-card {
+  background: #fff;
+  color: #000;
+  border-radius: 8px;
+  padding: 10px 16px;
+ 
+  font-weight: bold;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.available-text {
+  display: block;
+  color: green;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.more-btn {
+  margin-top: 15px;
+  padding: 8px 20px;
+  background: #28a745;
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Chart + Peak/Low */
+.chart-and-days-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* Chart Box */
+.chart-box {
+  flex: 2;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+/* Peak & Low Cards */
+.peaklow-card {
+  flex: 1;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 10px;
+  
+}
+
+.peak-title {
+  border-left: 5px solid #00d4ff;
+  padding-left: 10px;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.low-title {
+  border-left: 5px solid #ff6b6b;
+  padding-left: 10px;
+  margin-bottom: 12px;
+  color: #222;
+}
+
+.peaklow-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.peaklow-card li {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px dashed #ddd;
+}
+
+.peaklow-card .blue {
+  color: #00bfff;
+  font-weight: bold;
+}
+
+.peaklow-card .red {
+  color: #e74c3c;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  /* Seat Grid: show 2 per row */
+  .seat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Seat Card: reduce padding */
+  .seat-card {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+
+  /* Chart + Peak/Low stack vertically */
+  .chart-and-days-row {
+    flex-direction: column;
+  }
+
+  /* Chart and peak/low width full */
+  .chart-box,
+  .peaklow-card {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .seat-availability-box h2 {
+    font-size: 20px;
+  }
+
+  .more-btn {
+    width: 100%;
+  }
+
+  .peak-title,
+  .low-title {
+    font-size: 18px;
+  }
+
+  .peaklow-card li {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .peaklow-card li span:last-child {
+    margin-top: 4px;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Seat Grid: 1 per row for very small screens */
+  .seat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .seat-card {
+    font-size: 13px;
+  }
+
+  .seat-availability-box {
+    padding: 16px 12px;
+  }
+
+  .peaklow-card {
+    padding: 14px;
+  }
+
+  .chart-box {
+    padding: 14px;
+  }
+}

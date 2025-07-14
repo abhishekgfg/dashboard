@@ -17,6 +17,14 @@ import MonthlyFeeReport from './Pages/MonthlyFeeReport';
 import StudentsWithoutSeats from './Pages/StudentsWithoutSeats';
 import TodoList from './Pages/TodoList';
 import AddNotice from './Pages/AddNoticePopup';
+import BirthdayWish from './Pages/BirthdayPage';
+import NewStudents from './Pages/NewStudents';
+import StudentAttendanceReport from './Pages/StudentAttendanceReport';
+import StaffsDetail from './Pages/StaffsDetail'; // Make sure the filename matches
+import SettingsPage from './Pages/SettingsPage';
+
+
+
  
 
 
@@ -152,6 +160,48 @@ function App() {
   element={
     <Layout>
       <AddNotice />
+    </Layout>
+  }
+/>
+
+<Route
+  path="/birthday-wish"
+  element={
+    <Layout>
+      <BirthdayWish />
+    </Layout>
+  }
+/>
+<Route
+  path="/new-students"
+  element={
+    <Layout>
+      <NewStudents />
+    </Layout>
+  }
+/>
+
+<Route
+  path="/attendance-report"
+  element={
+    <Layout>
+      <StudentAttendanceReport />
+    </Layout>
+  }
+/>
+<Route
+  path="/staffs-detail"
+  element={
+    <Layout>
+      <StaffsDetail />
+    </Layout>
+  }
+/>
+<Route
+  path="/settings"
+  element={
+    <Layout>
+      <SettingsPage />
     </Layout>
   }
 />
