@@ -1,28 +1,58 @@
+// src/App.jsx
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Sidebar from "./components/Sidebar";
-import HomePage from "./Pages/HomePage";
-import FutureProjection from "./Pages/Prediction";
+import Layout from './components/Layout';
+
+import HomePage from './Pages/HomePage';
+import FutureProjection from './Pages/Prediction';
 import Demo from './Pages/Demo';
 import AddStudentDetail from './Pages/AddStudentDetail';
-import StudentProfile from './Pages/StudentProfile'; 
-
+import StudentDetails from './Pages/StudentDetails';
 
 function App() {
   return (
     <Router>
-      <div style={{ display: "flex" }}>
-        <Sidebar />
-        <div style={{ flexGrow: 1, padding: "20px", backgroundColor: "#f4f7fe" }}>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/future-projection" element={<FutureProjection />} />
-            <Route path="/Demo" element={<Demo />} />
-            <Route path="/add-student-detail" element={<AddStudentDetail />} />
-            <Route path="/student/:id" element={<StudentProfile />} />
-            {/* Add more routes as needed */}
-          </Routes>
-        </div>
-      </div>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <Layout>
+              <HomePage />
+            </Layout>
+          }
+        />
+        <Route
+          path="/future-projection"
+          element={
+            <Layout>
+              <FutureProjection />
+            </Layout>
+          }
+        />
+        <Route
+          path="/Demo"
+          element={
+            <Layout>
+              <Demo />
+            </Layout>
+          }
+        />
+        <Route
+          path="/add-student-detail"
+          element={
+            <Layout>
+              <AddStudentDetail />
+            </Layout>
+          }
+        />
+        <Route
+          path="/student-details"
+          element={
+            <Layout>
+              <StudentDetails />
+            </Layout>
+          }
+        />
+      </Routes>
     </Router>
   );
 }

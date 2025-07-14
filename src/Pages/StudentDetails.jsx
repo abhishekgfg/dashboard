@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import '../styles/Studentdata.css';
+import '../styles/StudentDetails.css';
 
-const StudentProfile = () => {
+const StudentDetails = () => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [statusFilter, setStatusFilter] = useState('all');
 
   const students = [
     { id: 1, name: 'Advik Sharma', email: 'advik.sharma@example.com', mobile: '9876543219', dob: '2005-05-17', gender: 'Male', contactDate: '2025-01-17', leavingDate: '0000-00-00', photo: 'photo1.jpg' },
@@ -33,50 +34,61 @@ const StudentProfile = () => {
           onChange={(e) => setSearchTerm(e.target.value)}
         />
         <div>
-          <button className="status-btn">Active</button>
+          <select
+            className="status-dropdown"
+            value={statusFilter}
+            onChange={(e) => setStatusFilter(e.target.value)}
+          >
+            <option value="all">All</option>
+            <option value="active">Active</option>
+            <option value="inactive">Inactive</option>
+          </select>
           <button className="column-btn">Column</button>
           <button className="home-btn">Home</button>
         </div>
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>Sr No</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Mobile</th>
-            <th>Date of Birth</th>
-            <th>Gender</th>
-            <th>Contact Date</th>
-            <th>Leaving Date</th>
-            <th>Photo</th>
-            <th>Profile</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredStudents.map(student => (
-            <tr key={student.id}>
-              <td>{student.id}</td>
-              <td>{student.name}</td>
-              <td>{student.email}</td>
-              <td>{student.mobile}</td>
-              <td>{student.dob}</td>
-              <td>{student.gender}</td>
-              <td>{student.contactDate}</td>
-              <td>{student.leavingDate}</td>
-              <td><img src={student.photo} alt="Student" width="50" /></td>
-              <td><button className="profile-btn">Form</button></td>
-              <td>
-                <button class="action-btn edit-btn">Edit</button>
-                <button class="action-btn form-btn">Form</button>
-              </td>
+
+      <div className="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Sr No</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Mobile</th>
+              <th>Date of Birth</th>
+              <th>Gender</th>
+              <th>Contact Date</th>
+              <th>Leaving Date</th>
+              <th>Photo</th>
+              <th>Profile</th>
+              <th>Action</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {filteredStudents.map(student => (
+              <tr key={student.id}>
+                <td>{student.id}</td>
+                <td>{student.name}</td>
+                <td>{student.email}</td>
+                <td>{student.mobile}</td>
+                <td>{student.dob}</td>
+                <td>{student.gender}</td>
+                <td>{student.contactDate}</td>
+                <td>{student.leavingDate}</td>
+                <td><img src={student.photo} alt="Student" width="50" /></td>
+                <td><button className="profile-btn">Form</button></td>
+                <td>
+                  <button className="action-btn edit-btn">Edit</button>
+                  <button className="action-btn form-btn">Form</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
 
-export default StudentProfile;
+export default StudentDetails;

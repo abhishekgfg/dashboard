@@ -50,7 +50,7 @@ const Sidebar = () => {
           <NavLink to="/add-student-detail" className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`}>
             <span className="icon add-student"><IoMdPersonAdd /></span> Add Student
           </NavLink>
-          <NavLink to="/student/:id" className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`}>
+          <NavLink to="/student-details" className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`}>
             <span className="icon student-detail"><FaUsers /></span> Student Detail
           </NavLink>
 
