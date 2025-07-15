@@ -48,16 +48,16 @@ const Revenue = () => {
         <button className="view-report-btn">View Report</button>
       </div>
 
-      <div className="summary-section">
-        <div className="summary-card">
+      <div className="summary-section1">
+        <div className="summary-card1">
           <h3>Total Fees</h3>
           <p>{totalFees}</p>
         </div>
-        <div className="summary-card">
+        <div className="summary-card1">
           <h3>Total Expenses</h3>
           <p>{totalExpenses}</p>
         </div>
-        <div className="summary-card">
+        <div className="summary-card1">
           <h3>Net Profit</h3>
           <p style={{ color: 'white' }}>{netProfit}</p>
         </div>

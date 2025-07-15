@@ -39,13 +39,13 @@ h2 {
   border-radius: 5px;
 }
 
-.summary-section {
+.summary-section1 {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
 }
 
-.summary-card {
+.summary-card1 {
   background: #196764;
   padding: 10px;
   border-radius: 5px;
@@ -53,15 +53,15 @@ h2 {
   width: 30%;
 }
 
-.summary-card h3 {
+.summary-card1 h3 {
   margin: 0 0 10px;
-  color: #ffffff;
+  color: #f6f2f2;
 }
 
-.summary-card p {
+.summary-card1 p {
   margin: 0;
   font-size: 1.2em;
-  color: #fff8f8;
+  color: #f4f0f0;
 }
 
 .details-section h3 {
