@@ -84,7 +84,7 @@
   .mobile-header-title {
     font-size: 18px;
     font-weight: 600;
-    color: #111827;
+    color: #ffffff;
   }
 
   .mobile-header-actions {
@@ -227,7 +227,7 @@
   }
 
   .sidebar-container {
-    margin-top: -10%;
+      margin-top: -15%;
     position: fixed;
     top: 0;
     left: -260px;
@@ -248,6 +248,7 @@
     text-align: right;
     padding: 10px;
     cursor: pointer;
+  
   }
 
   .main-content {
@@ -257,6 +258,6 @@
 
 
 .sidebar-menu.scrollable {
-  max-height: calc(100vh - 250px); /* Adjust based on header/profile height */
+  max-height: calc(100vh - 100px); /* Adjust based on header/profile height */
   overflow-y: auto;
 }
