@@ -247,9 +247,9 @@ color: white;
 
 @media (max-width: 768px) {
   .homepage-container {
-    padding: 20px 16px;
+   
     height: auto;
-    overflow-y: auto;
+   
     /* margin-top: 50px; */
   }
 
@@ -439,7 +439,7 @@ color: white;
   min-width: 300px;
   background: #ffffff;
   color: black;
-  padding: 25px;
+  padding: 15px;
   border-radius: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
@@ -453,26 +453,15 @@ color: white;
   margin: 4px 0;
 }
 
-.expense-table-home {
- 
-  margin-top: 20px;
-  border-collapse: collapse;
-  font-size: 15px;
- 
-}
 
-.expense-table3 th, .expense-table3 td {
-  padding: 2px;
-  border-bottom: 1px solid #ccc;
-  text-align: left;
-}
+
 
 .expense-box {
   background: #fff;
-  padding: 20px;
+  padding: 10px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  max-width: 100%;
+  max-width: 90%;
   overflow: hidden;
 }
 
@@ -481,7 +470,7 @@ color: white;
   margin-top: 10px;
 }
 
-.expense-table-home {
+.expense-table  {
   width: 100%;
   border-collapse: collapse;
   min-width: 600px; /* optional: ensures proper layout */
@@ -568,7 +557,7 @@ color: white;
 }
 
 .payment-table {
-  width: 100%;
+  width: 90%;
  
   border-collapse: collapse;
 }
@@ -610,16 +599,16 @@ color: white;
 
 /* Responsive */
 @media (max-width: 768px) {
-  .payment-tables3 {
+  .payment-tables {
     flex-direction: column;
     width: 90%;
   }
 
-  .payment-card3 {
+  .payment-card {
     width: 90%;
   }
 
-  .payment-table3 {
+  .payment-table {
     font-size: 14px;
   }
 }

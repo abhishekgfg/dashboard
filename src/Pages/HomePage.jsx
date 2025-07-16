@@ -137,7 +137,7 @@ const HomePage = () => {
 
   {/* ✅ Scrollable wrapper */}
   <div className="table-wrapper">
-    <table className="expense-table-home">
+    <table className="expense-tables">
       <thead>
         <tr>
           <th>S.No.</th>
