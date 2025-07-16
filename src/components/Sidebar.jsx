@@ -13,11 +13,15 @@ import { NavLink } from 'react-router-dom';
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
+  const closeSidebar = () => {
+    setIsOpen(false);
+  };
+
   return (
     <>
       {/* ==== Mobile Header ==== */}
       <div className="mobile-dashboard-header">
-        <FaBars className="mobile-header-icon" onClick={() => setIsOpen(true)} />
+        <FaBars className="mobile-header-icon" onClick={() => setIsOpen(!isOpen)} />
         <div className="mobile-header-title">Dashboard</div>
         <div className="mobile-header-actions">
           <FaMoon className="mobile-header-icon moon" />
@@ -27,7 +31,7 @@ const Sidebar = () => {
 
       {/* ==== Sidebar ==== */}
       <div className={`sidebar-container ${isOpen ? "open" : ""}`}>
-        <div className="sidebar-close-btn" onClick={() => setIsOpen(false)}>×</div>
+        <div className="sidebar-close-btn" onClick={closeSidebar}>×</div>
 
         <div className="profile-section">
           <FaUserCircle className="profile-icon" />
@@ -37,114 +41,69 @@ const Sidebar = () => {
           </div>
         </div>
 
-        <div className="sidebar-menu">
-          <NavLink to="/" className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`}>
+        <div className="sidebar-menu scrollable">
+          <NavLink to="/" className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`} onClick={closeSidebar}>
             <span className="icon dashboard"><FaTachometerAlt /></span> Dashboard
           </NavLink>
-          <NavLink to="/future-projection" className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`}>
+          <NavLink to="/future-projection" className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`} onClick={closeSidebar}>
             <span className="icon prediction"><FaRupeeSign /></span> Prediction
           </NavLink>
-          <NavLink to="/Demo" className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`}>
+          <NavLink to="/Demo" className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`} onClick={closeSidebar}>
             <span className="icon demo"><IoMdPersonAdd /></span> Add Demo
           </NavLink>
-          <NavLink to="/add-student-detail" className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`}>
+          <NavLink to="/add-student-detail" className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`} onClick={closeSidebar}>
             <span className="icon add-student"><IoMdPersonAdd /></span> Add Student
           </NavLink>
-          <NavLink to="/student-details" className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`}>
+          <NavLink to="/student-details" className={({ isActive }) => `menu-item ${isActive ? "active" : ""}`} onClick={closeSidebar}>
             <span className="icon student-detail"><FaUsers /></span> Student Detail
           </NavLink>
-
-         <NavLink
-  to="/manage-fee"
-  className={({ isActive }) =>
-    `menu-item${isActive ? ' active' : ''}`
-  }
->
-  <span className="icon fee"><FaClipboardList /></span> Manage Fee
-</NavLink>
-
-         <NavLink to="/pending-fee" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}><span className="icon pending-fee"><FaClipboardList /></span> Pending Fee</NavLink>
-
-          <NavLink to="/seat-allotment" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}><span className="icon seats"><FaUsers /></span> Seats</NavLink>
-
-         <NavLink to="/expense" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}>
-  <span className="icon expenses"><FaRupeeSign /></span> Expenses
-</NavLink>
-
-         <NavLink
-  to="/revenue"
-  className={({ isActive }) =>
-    `menu-item${isActive ? ' active' : ''}`
-  }
->
-  <span className="icon revenue"><FaRupeeSign /></span> Revenue
-</NavLink>
-
-<NavLink
-  to="/monthly-fee"
-  className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}
->
-  <span className="icon monthly-fee"><FaRupeeSign /></span> Monthly Fee
-</NavLink>
-
-<NavLink
-  to="/students-without-seats"
-  className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}
->
-  <span className="icon unseated"><FaUsers /></span> Unseated Students
-</NavLink>
-         
-          <div className="menu-item"><span className="icon bulk-mail"><FaMailBulk /></span> Bulk Mail</div>
-
-
-
-        <NavLink
-  to="/todo-list"
-  className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}
->
-  <span className="icon todo"><FaEnvelopeOpenText /></span> To Do List
-</NavLink>
-
+          <NavLink to="/manage-fee" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`} onClick={closeSidebar}>
+            <span className="icon fee"><FaClipboardList /></span> Manage Fee
+          </NavLink>
+          <NavLink to="/pending-fee" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`} onClick={closeSidebar}>
+            <span className="icon pending-fee"><FaClipboardList /></span> Pending Fee
+          </NavLink>
+          <NavLink to="/seat-allotment" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`} onClick={closeSidebar}>
+            <span className="icon seats"><FaUsers /></span> Seats
+          </NavLink>
+          <NavLink to="/expense" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`} onClick={closeSidebar}>
+            <span className="icon expenses"><FaRupeeSign /></span> Expenses
+          </NavLink>
+          <NavLink to="/revenue" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`} onClick={closeSidebar}>
+            <span className="icon revenue"><FaRupeeSign /></span> Revenue
+          </NavLink>
+          <NavLink to="/monthly-fee" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`} onClick={closeSidebar}>
+            <span className="icon monthly-fee"><FaRupeeSign /></span> Monthly Fee
+          </NavLink>
+          <NavLink to="/students-without-seats" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`} onClick={closeSidebar}>
+            <span className="icon unseated"><FaUsers /></span> Unseated Students
+          </NavLink>
+          <NavLink to="/bulk-mail" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`} onClick={closeSidebar}>
+            <span className="icon bulk-mail"><FaMailBulk /></span> Bulk Mail
+          </NavLink>
+          <NavLink to="/todo-list" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`} onClick={closeSidebar}>
+            <span className="icon todo"><FaEnvelopeOpenText /></span> To Do List
+          </NavLink>
           <div className="menu-item"><span className="icon messenger"><FaCommentDots /></span> Messenger</div>
-         <NavLink to="/add-notice" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`}>
-  <span className="icon add-notice"><MdOutlineEventNote /></span> Notice
-</NavLink>
-
-          {/* <div className="menu-item"><span className="icon view-notice"><FaRupeeSign /></span> View Notices</div> */}
-         <NavLink
-  to="/birthday-wish"
-  className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}
->
-  <span className="icon birthday"><FaBirthdayCake /></span> Birthday Wish
-</NavLink>
-
-         <NavLink to="/new-students" className="menu-item" activeclassname="active">
-  <span className="icon students-new">
-    <FaRupeeSign />
-  </span>
-  Students (New)
-</NavLink>
-
-         <NavLink
-  to="/attendance-report"
-  className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}
->
-  <span className="icon attendance"><FaCalendarCheck /></span> Attendance
-</NavLink>
-          <NavLink
-  to="/staffs-detail"
-  className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}
->
-  <span className="icon staffs"><FaChalkboardTeacher /></span> Staffs Detail
-</NavLink>
+          <NavLink to="/add-notice" className={({ isActive }) => `menu-item${isActive ? ' active' : ''}`} onClick={closeSidebar}>
+            <span className="icon add-notice"><MdOutlineEventNote /></span> Notice
+          </NavLink>
+          <NavLink to="/birthday-wish" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`} onClick={closeSidebar}>
+            <span className="icon birthday"><FaBirthdayCake /></span> Birthday Wish
+          </NavLink>
+          <NavLink to="/new-students" className="menu-item" onClick={closeSidebar}>
+            <span className="icon students-new"><FaRupeeSign /></span> Students (New)
+          </NavLink>
+          <NavLink to="/attendance-report" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`} onClick={closeSidebar}>
+            <span className="icon attendance"><FaCalendarCheck /></span> Attendance
+          </NavLink>
+          <NavLink to="/staffs-detail" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`} onClick={closeSidebar}>
+            <span className="icon staffs"><FaChalkboardTeacher /></span> Staffs Detail
+          </NavLink>
           <div className="menu-item"><span className="icon usernames"><FaUserEdit /></span> Usernames</div>
-          <NavLink
-  to="/settings"
-  className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`}
->
-  <span className="icon settings"><FaCogs /></span> Settings
-</NavLink>
-
+          <NavLink to="/settings" className={({ isActive }) => `menu-item ${isActive ? 'active' : ''}`} onClick={closeSidebar}>
+            <span className="icon settings"><FaCogs /></span> Settings
+          </NavLink>
         </div>
       </div>
 

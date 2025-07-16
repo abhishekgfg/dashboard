@@ -20,67 +20,69 @@ const MonthlyFeeReport = () => {
   const onlinePayments = feeData.filter(item => item.mode === 'ONLINE').reduce((sum, item) => sum + item.amount, 0).toFixed(2);
 
   return (
-    <div className="monthly-fee-report">
-      <div className="header">
+    <div className="monthly-fee-report-container">
+      <div className="monthly-fee-header">
         <h2>Monthly Fee Report - July 2025</h2>
-        <div className="header-actions">
+        <div className="monthly-fee-header-actions">
           <select value={selectedMonth} disabled>
             <option value="July 2025">July 2025</option>
           </select>
-          <button className="filter-btn">Filter</button>
+          <button className="monthly-fee-filter-btn">Filter</button>
           <input type="text" placeholder="Search students..." />
-          <button className="dashboard-btn" onClick={() => navigate('/dashboard')}>Dashboard</button>
+          <button className="monthly-fee-dashboard-btn" onClick={() => navigate('/dashboard')}>Dashboard</button>
         </div>
       </div>
-      <div className="summary-section">
-        <div className="summary-card">
+      <div className="monthly-fee-summary">
+        <div className="monthly-fee-card">
           <h3>Total Collected</h3>
-          <p>₹4,546.45</p>
+          <p>₹{totalCollected}</p>
         </div>
-        <div className="summary-card">
+        <div className="monthly-fee-card">
           <h3>Cash Payments</h3>
-          <p>₹2,661.00</p>
+          <p>₹{cashPayments}</p>
         </div>
-        <div className="summary-card">
+        <div className="monthly-fee-card">
           <h3>Online Payments</h3>
-          <p>₹1,885.45</p>
+          <p>₹{onlinePayments}</p>
         </div>
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Actions</th>
-            <th>Student</th>
-            <th>Payment Date</th>
-            <th>Expires</th>
-            <th>Submitted</th>
-            <th>Mode</th>
-            <th>Amount</th>
-          </tr>
-        </thead>
-        <tbody>
-          {feeData.map((item) => (
-            <tr key={item.id}>
-              <td>{item.id}</td>
-              <td>
-                <button className="send-btn">Send</button>
-                <button className="invoice-btn">Invoice</button>
-              </td>
-              <td>{item.student}</td>
-              <td>{item.paymentDate}</td>
-              <td>{item.expires}</td>
-              <td>{item.submitted}</td>
-              <td>
-                <span className={`mode ${item.mode === 'CASH' ? 'cash' : 'online'}`}>
-                  {item.mode}
-                </span>
-              </td>
-              <td>₹{item.amount.toFixed(2)}</td>
+      <div className="monthly-fee-table-wrapper">
+        <table className="monthly-fee-table">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Actions</th>
+              <th>Student</th>
+              <th>Payment Date</th>
+              <th>Expires</th>
+              <th>Submitted</th>
+              <th>Mode</th>
+              <th>Amount</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {feeData.map((item) => (
+              <tr key={item.id}>
+                <td>{item.id}</td>
+                <td>
+                  <button className="monthly-fee-send-btn">Send</button>
+                  <button className="monthly-fee-invoice-btn">Invoice</button>
+                </td>
+                <td>{item.student}</td>
+                <td>{item.paymentDate}</td>
+                <td>{item.expires}</td>
+                <td>{item.submitted}</td>
+                <td>
+                  <span className={`monthly-fee-mode ${item.mode === 'CASH' ? 'cash' : 'online'}`}>
+                    {item.mode}
+                  </span>
+                </td>
+                <td>₹{item.amount.toFixed(2)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };

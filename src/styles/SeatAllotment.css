@@ -5,104 +5,173 @@ body {
   background-color: #800080; /* Purple background */
 }
 
-/* .container {
-  width: 80%;
-  margin: 20px auto;
-  padding: 20px;
-} */
-
+/* Header Section */
 .header {
   background-color: #800080;
   color: #fff;
-  padding: 10px;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-bottom: 20px;
 }
 
 .header input {
-  padding: 5px;
+  padding: 6px 10px;
   width: 200px;
+  max-width: 100%;
   border: none;
-  border-radius: 3px;
+  border-radius: 4px;
   background-color: #fff;
   color: #333;
+  font-size: 14px;
 }
 
 .dashboard-btn {
-  padding: 5px 10px;
-  background-color: #4CAF50; /* Green */
+  padding: 7px 14px;
+  background-color: #4CAF50;
   color: #fff;
   border: none;
-  border-radius: 3px;
+  border-radius: 4px;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .dashboard-btn:hover {
   background-color: #45a049;
 }
 
+/* Slot Section Title */
 .slot-section {
   margin-bottom: 40px;
 }
 
 .slot-section h2 {
-  color: #ffd700; /* Yellow */
+  color: #ffd700;
   text-align: center;
   font-size: 24px;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
   border-bottom: 2px dashed #ffd700;
-  padding-bottom: 5px;
+  padding-bottom: 8px;
 }
 
-/* .seats-container {
-  display: grid;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap;
-} */
+/* Seats Container */
 .seats-container {
   display: grid;
- grid-template-columns: repeat(4, 1fr);
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
   padding: 20px;
+  justify-content: center;
 }
 
+/* Individual Seat Cards */
 .seat-card {
   background-color: #fff;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
+  border-radius: 6px;
+  padding: 15px;
   text-align: center;
-  width: 180px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 180px;
+  margin: auto;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.seat-card:hover {
+  transform: translateY(-4px);
 }
 
 .seat-card img {
   width: 100px;
   height: 100px;
   object-fit: cover;
+  border-radius: 4px;
   margin-bottom: 10px;
 }
 
 .seat-card p {
-  margin: 5px 0;
+  margin: 6px 0;
   font-size: 14px;
+  color: #333;
 }
 
 .un-allot-btn {
-  background-color: #4CAF50; /* Green */
+  background-color: #4CAF50;
   color: #fff;
-  padding: 5px 10px;
+  padding: 6px 12px;
   border: none;
-  border-radius: 3px;
+  border-radius: 4px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .un-allot-btn:hover {
   background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .seats-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .seats-container {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: left;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    width: 100%;
+  }
+
+  .header input,
+  .dashboard-btn {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  .seat-card {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .seats-container {
+     grid-template-columns: repeat(2, 1fr);
+     gap: 40px;
+     
+  }
+
+  .header input {
+    font-size: 13px;
+  }
+
+  .dashboard-btn {
+    font-size: 13px;
+  }
+
+  .seat-card img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .seat-card p {
+    font-size: 13px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .header input {
+    width: 120px;
+    font-size: 13px;
+  }
 }

@@ -7,49 +7,58 @@ body {
 
 .container {
   width: 90%;
+  max-width: 1200px;
   margin: 20px auto;
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow-x: auto;
 }
 
+/* Header Section */
 .header {
   background-color: #007bff;
   color: #fff;
   padding: 10px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  gap: 10px;
 }
 
 .header input {
-  padding: 5px;
+  padding: 6px 10px;
   width: 200px;
   border: none;
   border-radius: 3px;
   background-color: #fff;
   color: #333;
+  font-size: 14px;
 }
 
 .dashboard-btn {
-  padding: 5px 10px;
+  padding: 6px 12px;
   background-color: #4CAF50;
   color: #fff;
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .dashboard-btn:hover {
   background-color: #45a049;
 }
 
+/* Table */
 table {
   width: 100%;
   border-collapse: collapse;
   margin: 0;
+  min-width: 600px;
 }
 
 th {
@@ -58,12 +67,14 @@ th {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+  font-size: 14px;
 }
 
 td {
   padding: 12px;
   text-align: left;
   border-bottom: 1px solid #ddd;
+  font-size: 14px;
 }
 
 tr:nth-child(even) {
@@ -74,14 +85,19 @@ tr:nth-child(odd) {
   background-color: #fff;
 }
 
-.manage-btn {
-  background-color: #4CAF50;
-  color: #fff;
-  padding: 5px 10px;
+/* Action Buttons */
+.manage-btn,
+.modify-btn {
+  padding: 6px 10px;
+  font-size: 12px;
   border: none;
   border-radius: 3px;
   cursor: pointer;
-  font-size: 12px;
+}
+
+.manage-btn {
+  background-color: #4CAF50;
+  color: #fff;
 }
 
 .manage-btn:hover {
@@ -91,13 +107,92 @@ tr:nth-child(odd) {
 .modify-btn {
   background-color: #ff4500;
   color: #fff;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 12px;
 }
 
 .modify-btn:hover {
   background-color: #cc3700;
+}
+
+/* Scrollable wrapper for mobile */
+.table-wrapper {
+  overflow-x: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+    width: 600px;
+  }
+
+  .header input{
+    width: 100px;
+  }
+
+  table {
+    font-size: 13px;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header input {
+    font-size: 13px;
+  }
+
+  .manage-btn,
+  .modify-btn {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+
+  th, td {
+    font-size: 12px;
+  }
+}
+
+
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-wrapper table {
+  width: 100%;
+  min-width: 600px; /* or more depending on columns */
+  border-collapse: collapse;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  .table-wrapper {
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-wrapper table {
+    font-size: 13px;
+  }
+
+  .table-wrapper th,
+  .table-wrapper td {
+    padding: 8px;
+  }
+
+  .manage-btn,
+  .modify-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
 }

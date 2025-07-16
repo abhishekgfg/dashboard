@@ -1,5 +1,5 @@
 .settings-container {
-  padding: 40px;
+ 
   background: #f4f6fa;
   min-height: 100vh;
   font-family: 'Segoe UI', sans-serif;
@@ -24,10 +24,11 @@
   padding: 20px;
   border-radius: 12px;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
-  width: 80%;
+  width: 100%;
   text-align: center;
   transition: transform 0.2s ease;
   cursor: pointer;
+  box-sizing: border-box;
 }
 
 .setting-card:hover {
@@ -52,4 +53,29 @@
   color: red;
   font-weight: bold;
   font-size: 14px;
+}
+
+/* ✅ Responsive styles */
+@media (max-width: 480px) {
+  .settings-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .setting-card {
+    width: 100%;
+    padding: 16px;
+  }
+
+  .settings-container h1 {
+    font-size: 26px;
+  }
+
+  .setting-card .label {
+    font-size: 14px;
+  }
+
+  .setting-card .icon {
+    font-size: 28px;
+  }
 }

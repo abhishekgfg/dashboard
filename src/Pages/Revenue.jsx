@@ -65,32 +65,33 @@ const Revenue = () => {
 
       <div className="details-section">
         <h3>{selectedMonth} {selectedYear} Details</h3>
-        <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Fee Amount</th>
-              <th>Cash</th>
-              <th>Online</th>
-              <th>Expense Amount</th>
-            </tr>
-          </thead>
-          <tbody>
-            {revenueData
-              .filter(item => item.date.includes(selectedMonth.slice(0, 3)))
-              .map((item, index) => (
-                <tr key={index}>
-                  <td>{item.date}</td>
-                  <td>{item.feeAmount.toFixed(2)}</td>
-                  <td>{item.cash.toFixed(2)}</td>
-                  <td>{item.online.toFixed(2)}</td>
-                  <td>{item.expense.toFixed(2)}</td>
-                </tr>
-              ))}
-          </tbody>
-        </table>
-      </div>
-
+ <div className="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Fee Amount</th>
+        <th>Cash</th>
+        <th>Online</th>
+        <th>Expense Amount</th>
+      </tr>
+    </thead>
+    <tbody>
+      {revenueData
+        .filter(item => item.date.includes(selectedMonth.slice(0, 3)))
+        .map((item, index) => (
+          <tr key={index}>
+            <td>{item.date}</td>
+            <td>{item.feeAmount.toFixed(2)}</td>
+            <td>{item.cash.toFixed(2)}</td>
+            <td>{item.online.toFixed(2)}</td>
+            <td>{item.expense.toFixed(2)}</td>
+          </tr>
+        ))}
+    </tbody>
+  </table>
+</div>
+</div>
       {/* Yearly Report Section with Month Filter */}
       <div className="yearly-report-section">
         <h3>Yearly Report - Monthwise</h3>
@@ -104,36 +105,37 @@ const Revenue = () => {
             ))}
           </select>
         </div>
-
-        <table>
-          <thead>
-            <tr>
-              <th>Date</th>
-              <th>Fee Amount</th>
-              <th>Cash</th>
-              <th>Online</th>
-              <th>Expense</th>
-              <th>Net</th>
-            </tr>
-          </thead>
-          <tbody>
-            {yearlyFiltered.map((item, index) => {
-              const day = item.date.split(' ')[1].replace(',', '');
-              const monthName = item.date.split(' ')[0] === 'Jul' ? 'July' : 'August';
-              return (
-                <tr key={index}>
-                  <td>{`${day} ${monthName}`}</td>
-                  <td>{item.feeAmount.toFixed(2)}</td>
-                  <td>{item.cash.toFixed(2)}</td>
-                  <td>{item.online.toFixed(2)}</td>
-                  <td>{item.expense.toFixed(2)}</td>
-                  <td>{(item.feeAmount - item.expense).toFixed(2)}</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-      </div>
+  <div className="table-wrapper1">
+  <table>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Fee Amount</th>
+        <th>Cash</th>
+        <th>Online</th>
+        <th>Expense</th>
+        <th>Net</th>
+      </tr>
+    </thead>
+    <tbody>
+      {yearlyFiltered.map((item, index) => {
+        const day = item.date.split(' ')[1].replace(',', '');
+        const monthName = item.date.split(' ')[0] === 'Jul' ? 'July' : 'August';
+        return (
+          <tr key={index}>
+            <td>{`${day} ${monthName}`}</td>
+            <td>{item.feeAmount.toFixed(2)}</td>
+            <td>{item.cash.toFixed(2)}</td>
+            <td>{item.online.toFixed(2)}</td>
+            <td>{item.expense.toFixed(2)}</td>
+            <td>{(item.feeAmount - item.expense).toFixed(2)}</td>
+          </tr>
+        );
+      })}
+    </tbody>
+  </table>
+</div>
+</div>
     </div>
   );
 };

@@ -23,7 +23,7 @@ const Expense = () => {
 
   return (
     <div className="container">
-      <div className="header">
+      <div className="header1">
         <h2>Expense Details</h2>
         <div className="header-actions">
           <input
@@ -48,30 +48,33 @@ const Expense = () => {
         <p><strong>Number of Entries:</strong> {filteredExpenses.length}</p>
       </div>
 
-      <table>
-        <thead>
-          <tr>
-            <th>S.No</th>
-            <th>Date</th>
-            <th>Description</th>
-            <th>Category</th>
-            <th>Amount</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredExpenses.map(expense => (
-            <tr key={expense.id}>
-              <td>{expense.id}</td>
-              <td>{expense.date}</td>
-              <td>{expense.description}</td>
-              <td>{expense.category}</td>
-              <td>{expense.amount}</td>
-              <td><button className="delete-btn">Delete</button></td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
+     <div className="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Category</th>
+        <th>Amount</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {filteredExpenses.map(expense => (
+        <tr key={expense.id}>
+          <td>{expense.id}</td>
+          <td>{expense.date}</td>
+          <td>{expense.description}</td>
+          <td>{expense.category}</td>
+          <td>{expense.amount}</td>
+          <td><button className="delete-btn">Delete</button></td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
     </div>
   );
 };

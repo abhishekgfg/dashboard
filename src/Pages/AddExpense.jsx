@@ -25,7 +25,7 @@ const AddExpense = () => {
     <div className="container">
       <div className="header">
         <h2>Add New Expense</h2>
-        <button className="back-btn" onClick={() => window.history.back()}>Back</button>
+        <button className="back-btn1" onClick={() => window.history.back()}>Back</button>
       </div>
       <form className="expense-form" onSubmit={handleSubmit}>
         <div className="form-group">

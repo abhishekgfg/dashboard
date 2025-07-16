@@ -1,37 +1,40 @@
-
-
 .container {
-   
-  
-  /* margin: 20px auto; */
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  margin: 10px auto;
+  width: 100%;
+  max-width: 1200px;
+  box-sizing: border-box;
 }
 
+/* Header section */
 .header {
   background-color: #333;
   color: #fff;
   padding: 10px;
   display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   justify-content: space-between;
   align-items: center;
- 
 }
 
 .header input {
-  padding: 5px;
+  padding: 6px;
   width: 200px;
   border: none;
   border-radius: 3px;
+  font-size: 14px;
 }
 
 .header button {
-  padding: 5px 10px;
-  margin-left: 10px;
+  padding: 6px 12px;
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .status-btn {
@@ -43,7 +46,6 @@
   background-color: #4CAF50;
   color: white;
 }
-
 .column-btn:hover {
   background-color: #45a049;
 }
@@ -52,15 +54,21 @@
   background-color: #008CBA;
   color: white;
 }
-
 .home-btn:hover {
   background-color: #007B9A;
 }
 
+/* Table styles */
+.table-wrapper {
+  overflow-x: auto;
+  margin-top: 10px;
+  max-height: 500px;
+}
+
 table {
   width: 100%;
+  min-width: 600px;
   border-collapse: collapse;
-  margin-top: 10px;
 }
 
 th, td {
@@ -78,19 +86,20 @@ tr:nth-child(even) {
   background-color: #f2f2f2;
 }
 
+/* Action buttons */
 .action-btn {
-  padding: 5px 10px;
+  padding: 6px 10px;
   margin-right: 5px;
   border: none;
   border-radius: 3px;
   cursor: pointer;
+  font-size: 13px;
 }
 
 .edit-btn {
   background-color: #ff6347;
   color: white;
 }
-
 .edit-btn:hover {
   background-color: #e5533e;
 }
@@ -99,7 +108,6 @@ tr:nth-child(even) {
   background-color: #4682b4;
   color: white;
 }
-
 .form-btn:hover {
   background-color: #3d6a9b;
 }
@@ -107,12 +115,11 @@ tr:nth-child(even) {
 .profile-btn {
   background-color: #4682b4;
   color: white;
-  padding: 5px 10px;
+  padding: 6px 10px;
   border: none;
   border-radius: 3px;
   cursor: pointer;
 }
-
 .profile-btn:hover {
   background-color: #3d6a9b;
 }
@@ -121,16 +128,47 @@ img {
   width: 50px;
   height: 50px;
   object-fit: cover;
+  border-radius: 5px;
 }
 
-.table-wrapper {
-  /* overflow-x: auto;
-  overflow-y: auto; */
-  max-height: 500px; /* adjust as needed */
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header input {
+    width: 100%;
+  }
+
+  .header button {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  table {
+    font-size: 13px;
+  }
+
+  th, td {
+    padding: 10px;
+  }
 }
 
-table {
-  width: max-content;
-  min-width: 100%;
-  border-collapse: collapse;
+@media (max-width: 480px) {
+  .action-btn,
+  .form-btn,
+  .profile-btn {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
+
+  .header input {
+    font-size: 13px;
+  }
+
+  .header {
+    gap: 5px;
+  }
 }

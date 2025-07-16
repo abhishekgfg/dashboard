@@ -1,5 +1,5 @@
 .birthday-page {
-  padding: 40px 20px;
+  padding:  10px;
   font-family: 'Segoe UI', sans-serif;
   background: linear-gradient(to right, #ffe0e9, #e0f7ff);
   min-height: 100vh;
@@ -93,7 +93,7 @@
   font-weight: 500;
 }
 
-/* Animations */
+/* === Animations === */
 @keyframes bounce {
   0%, 100% {
     transform: translateY(0);
@@ -121,4 +121,71 @@
 
 .animate-fade {
   animation: fadeIn 0.8s ease;
+}
+
+/* ✅ Responsive Styles */
+@media (max-width: 768px) {
+  .birthday-header h1 {
+    font-size: 1.6rem;
+  }
+
+  .birthday-card {
+    padding: 16px;
+  }
+
+  .birthday-card img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .birthday-card h3 {
+    font-size: 1rem;
+  }
+
+  .birthday-card p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .birthday-header h1 {
+    font-size: 1.4rem;
+  }
+
+  .cake-icon {
+    font-size: 48px;
+  }
+
+  .birthday-search input {
+    padding: 10px 16px;
+    font-size: 0.95rem;
+    width: 250px;
+  }
+
+  .no-birthday-box {
+    padding: 25px;
+    font-size: 1rem;
+  }
+
+  .birthday-grid {
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0;
+  }
+
+  .birthday-card {
+    padding: 14px;
+  }
+
+  .birthday-card img {
+    width: 65px;
+    height: 65px;
+  }
+
+  .birthday-card h3 {
+    font-size: 0.95rem;
+  }
+
+  .birthday-card p {
+    font-size: 0.9rem;
+  }
 }

@@ -1,0 +1,188 @@
+.bulkmail-wrapper {
+  padding: 30px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.bulkmail-title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
+}
+
+.bulkmail-message-box {
+  padding: 30px;
+  border-radius: 8px;
+  margin-bottom: 30px;
+  background: #f9f9f9;
+}
+
+.bulkmail-offer-textarea,
+.bulkmail-main-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 15px;
+  resize: vertical;
+  margin-top: 10px;
+}
+
+.bulkmail-main-textarea {
+  height: 120px;
+}
+
+.bulkmail-upload-section {
+  margin-top: 20px;
+}
+
+.bulkmail-upload-label {
+  background-color: #4caf50;
+  color: white;
+  padding: 8px 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  display: inline-block;
+}
+
+.bulkmail-upload-label input[type="file"] {
+  display: none;
+}
+
+.bulkmail-preview {
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.bulkmail-delete-btn {
+  background: #e53935;
+  border: none;
+  color: white;
+  padding: 6px 12px;
+  font-size: 13px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.bulkmail-note {
+  font-size: 13px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.bulkmail-update-btn {
+  margin-top: 20px;
+  padding: 10px 24px;
+  font-size: 15px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.bulkmail-update-btn:hover {
+  background: #0062cc;
+}
+
+.bulkmail-student-section {
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.bulkmail-student-title {
+  font-size: 20px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+.bulkmail-table-responsive {
+  overflow-x: auto;
+}
+
+.bulkmail-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  min-width: 600px;
+}
+
+.bulkmail-table th,
+.bulkmail-table td {
+  padding: 10px 14px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.bulkmail-table th {
+  background: #f1f1f1;
+  font-weight: 600;
+  color: #333;
+}
+
+.bulkmail-send-btn {
+  background-color: #28a745;
+  color: white;
+  padding: 6px 14px;
+  font-size: 13px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.bulkmail-send-btn:hover {
+  background-color: #218838;
+}
+
+.bulkmail-start-btn {
+  margin-top: 30px;
+  padding: 12px 28px;
+  font-size: 16px;
+  background: #ff5722;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.bulkmail-start-btn:hover {
+  background: #e64a19;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .bulkmail-title {
+    font-size: 22px;
+  }
+
+  .bulkmail-main-textarea {
+    height: 100px;
+  }
+
+  .bulkmail-upload-label {
+    padding: 6px 14px;
+    font-size: 13px;
+  }
+
+  .bulkmail-send-btn,
+  .bulkmail-delete-btn,
+  .bulkmail-update-btn,
+  .bulkmail-start-btn {
+    font-size: 13px;
+    padding: 8px 16px;
+  }
+
+  .bulkmail-table {
+    font-size: 13px;
+  }
+
+  .bulkmail-table th,
+  .bulkmail-table td {
+    padding: 8px 12px;
+  }
+}

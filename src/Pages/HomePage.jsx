@@ -130,12 +130,14 @@ const HomePage = () => {
   </div>
 
   <div className="expense-box">
-    <h2>Recent Expenses</h2>
-    <p>Total for Today: <strong>0</strong></p>
-    <p>Total for Yesterday: <strong>0</strong></p>
-    <p>Total for This Month: <strong>0</strong></p>
+  <h2>Recent Expenses</h2>
+  <p>Total for Today: <strong>0</strong></p>
+  <p>Total for Yesterday: <strong>0</strong></p>
+  <p>Total for This Month: <strong>0</strong></p>
 
-    <table className="expense-table">
+  {/* ✅ Scrollable wrapper */}
+  <div className="table-wrapper">
+    <table className="expense-table-home">
       <thead>
         <tr>
           <th>S.No.</th>
@@ -153,61 +155,71 @@ const HomePage = () => {
         <tr><td>5</td><td>Library</td><td>Chai</td><td>40.00</td><td>2025-04-30</td></tr>
       </tbody>
     </table>
-    <button className="more-button">More</button>
   </div>
+
+  <button className="more-button">More</button>
+</div>
 </div>
 
-{/* 💳 Payment Tables Section */}
 <div className="payment-tables">
   <div className="payment-card">
     <h2>Recent Payments</h2>
-    <table className="payment-table">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Student Name</th>
-          <th>Fee Amount</th>
-          <th>Date Submitted</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr><td>2773</td><td>Rahul Singh</td><td>₹600.00</td><td>2025-07-10 17:49:08</td></tr>
-        <tr><td>1090</td><td>Udit gupta</td><td>₹600.00</td><td>2025-07-10 17:27:31</td></tr>
-        <tr><td>2567</td><td>Dileep Vijoliya</td><td>₹2.10</td><td>2025-07-10 08:24:15</td></tr>
-        <tr><td>2172</td><td>Dilip</td><td>₹1.05</td><td>2025-07-10 08:22:28</td></tr>
-        <tr><td>2172</td><td>Dilip</td><td>₹2.10</td><td>2025-07-10 08:21:15</td></tr>
-        
-      </tbody>
-    </table>
+
+    {/* ✅ Add scroll wrapper */}
+    <div className="table-wrapper">
+      <table className="payment-table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Student Name</th>
+            <th>Fee Amount</th>
+            <th>Date Submitted</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>2773</td><td>Rahul Singh</td><td>₹600.00</td><td>2025-07-10 17:49:08</td></tr>
+          <tr><td>1090</td><td>Udit Gupta</td><td>₹600.00</td><td>2025-07-10 17:27:31</td></tr>
+          <tr><td>2567</td><td>Dileep Vijoliya</td><td>₹2.10</td><td>2025-07-10 08:24:15</td></tr>
+          <tr><td>2172</td><td>Dilip</td><td>₹1.05</td><td>2025-07-10 08:22:28</td></tr>
+          <tr><td>2172</td><td>Dilip</td><td>₹2.10</td><td>2025-07-10 08:21:15</td></tr>
+        </tbody>
+      </table>
+    </div>
+
     <button className="more-button">More</button>
   </div>
 
   <div className="payment-card">
     <h2>Pending Payments</h2>
-    <table className="payment-table">
-      <thead>
-        <tr>
-          <th>Id</th>
-          <th>Name</th>
-          <th>Due Date</th>
-          <th>Passed</th>
-          <th>Fee</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>12</td>
-          <td>Dia Sharma</td>
-          <td>2025-03-01</td>
-          <td>132</td>
-          <td>600.00</td>
-        </tr>
-      </tbody>
-    </table>
+
+    {/* ✅ Add scroll wrapper */}
+    <div className="table-wrapper">
+      <table className="payment-table">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Due Date</th>
+            <th>Passed</th>
+            <th>Fee</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>12</td>
+            <td>Dia Sharma</td>
+            <td>2025-03-01</td>
+            <td>132</td>
+            <td>600.00</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
     <button className="more-button">More</button>
- 
   </div>
 </div>
+
 <div class="due-fees-section">
   <div class="due-fees-header">
     <h2>🚨 Students with Due Fees</h2>

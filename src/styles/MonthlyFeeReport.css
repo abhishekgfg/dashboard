@@ -1,16 +1,19 @@
-.monthly-fee-report {
+.monthly-fee-report-container {
   padding: 20px;
   font-family: Arial, sans-serif;
+  overflow-x: hidden;
 }
 
-.header {
+.monthly-fee-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-.header h2 {
+.monthly-fee-header h2 {
   color: #fff;
   background-color: #1a73e8;
   padding: 10px 20px;
@@ -19,113 +22,131 @@
   font-size: 16px;
 }
 
-.header-actions {
+.monthly-fee-header-actions {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
-.header-actions select {
+.monthly-fee-header-actions select,
+.monthly-fee-header-actions input,
+.monthly-fee-header-actions button {
   padding: 10px;
-  border: 1px solid #ffffff;
   border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 14px;
 }
 
-.header-actions button {
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.filter-btn {
+.monthly-fee-filter-btn {
   background-color: #1a73e8;
   color: white;
+  border: none;
 }
 
-.header-actions input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.dashboard-btn {
+.monthly-fee-dashboard-btn {
   background-color: #00bcd4;
   color: white;
+  border: none;
 }
 
-.summary-section {
+.monthly-fee-summary {
   display: flex;
   justify-content: space-between;
   margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
 }
 
-.summary-card {
+.monthly-fee-card {
+  flex: 1;
+  min-width: 200px;
   background: #1b6a8d;
-  padding: 10px;
+  padding: 15px;
   border-radius: 5px;
   text-align: center;
-  width: 30%;
 }
 
-.summary-card h3 {
+.monthly-fee-card h3,
+.monthly-fee-card p {
+  color: #fff;
   margin: 0 0 10px;
-  color: #ffffff;
 }
 
-.summary-card p {
-  margin: 0;
-  font-size: 1.2em;
-  color: #ffffff;
+.monthly-fee-table-wrapper {
+  overflow-x: auto;
 }
 
-table {
+.monthly-fee-table {
   width: 100%;
   border-collapse: collapse;
+  min-width: 700px;
 }
 
-th {
+.monthly-fee-table th {
   background-color: #1a73e8;
   color: white;
   padding: 10px;
   text-align: left;
 }
 
-td {
+.monthly-fee-table td {
   padding: 10px;
   border-bottom: 1px solid #ddd;
 }
 
-td button {
-  padding: 5px 10px;
-  margin-right: 5px;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  ;
-}
-
-.send-btn {
+.monthly-fee-send-btn {
   background-color: #e57373;
   color: white;
-
+  border: none;
+  margin-right: 5px;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
 }
-.invoice-btn {
+
+.monthly-fee-invoice-btn {
   background-color: #42a5f5;
   color: white;
-  margin-top: 10px;
-  
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
 }
 
-.mode {
-  padding: 2px 8px;
+.monthly-fee-mode {
+  padding: 3px 8px;
   border-radius: 10px;
   color: white;
 }
 
-.mode.cash {
+.monthly-fee-mode.cash {
   background-color: #4caf50;
 }
 
-.mode.online {
+.monthly-fee-mode.online {
   background-color: #f06292;
+}
+
+@media (max-width: 768px) {
+  .monthly-fee-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .monthly-fee-header h2 {
+    font-size: 14px;
+  }
+
+  .monthly-fee-summary {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .monthly-fee-table {
+    font-size: 13px;
+  }
+
+  .monthly-fee-table th, .monthly-fee-table td {
+    padding: 8px;
+  }
 }

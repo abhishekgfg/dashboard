@@ -1,63 +1,83 @@
 .prediction-container {
-  padding: 40px;
-  background: #fff;
-  border-radius: 10px;
-  /* max-width: 1200px; */
+  
+  max-width: 1200px;
   margin: auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background: #f9f9f9;
+  border-radius: 12px;
 }
 
 .prediction-title {
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 700;
-  margin-bottom: 30px;
+  margin: 20px 0;
+  text-align: center;
+  color: #333;
 }
 
-.threshold-analysis-grid {
+.threshold-analysis-grid,
+.trends-analysis-grid {
   display: flex;
-  gap: 40px;
   flex-wrap: wrap;
-  align-items: flex-start;
+  gap: 20px;
+  justify-content: space-between;
+}
+
+.threshold-table {
+  overflow-x: auto;
+  flex: 1;
+  min-width: 200px;
 }
 
 .threshold-table table {
-  /* width: 280px; */
+  width: 100%;
   border-collapse: collapse;
-  font-size: 16px;
-  text-align: center;
-  border: 1px solid #ddd;
 }
 
 .threshold-table th,
 .threshold-table td {
-  padding: 12px;
-  border: 1px solid #ddd;
-}
-
-.threshold-table th {
-  background-color: #f5f5f5;
-  font-weight: bold;
-}
-
-.threshold-chart {
-  flex-grow: 1;
-  /* min-width: 300px; */
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 14px;
 }
 
 .chart-label {
+  font-size: 12px;
+  text-align: center;
   margin-top: 10px;
-  font-size: 14px;
   color: #666;
 }
 
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  /* overflow-y: auto; */
+.chart-card {
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  flex: 1;
+  min-width: 300px;
 }
 
-.prediction-container {
-  /* max-height: 90vh; */
-  /* overflow-y: auto; */
+.profitability-summary {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  .prediction-title {
+    font-size: 22px;
+  }
+
+  .threshold-table th,
+  .threshold-table td {
+    font-size: 12px;
+  }
+
+  .chart-card {
+    padding: 10px;
+  }
+
+  .profitability-summary {
+    font-size: 14px;
+  }
 }

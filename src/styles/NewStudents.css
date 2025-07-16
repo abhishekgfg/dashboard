@@ -1,5 +1,5 @@
 .new-students-container {
-  padding: 30px 20px;
+ 
   text-align: center;
   font-family: 'Segoe UI', sans-serif;
 }
@@ -64,4 +64,34 @@
 .student-id {
   font-size: 14px;
   color: #666;
+}
+
+/* ✅ Responsive: 2 cards per row on mobile */
+@media (max-width: 480px) {
+  .student-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+  }
+
+  .student-card {
+    width: 100%;
+    max-width: 160px;
+    padding: 16px 10px;
+  }
+
+  .student-img,
+  .placeholder-img {
+    width: 80px;
+    height: 80px;
+    font-size: 28px;
+  }
+
+  .student-name {
+    font-size: 14px;
+  }
+
+  .student-id {
+    font-size: 12px;
+  }
 }

@@ -1,21 +1,23 @@
-.students-without-seats {
+.no-seat-container {
   padding: 20px;
   font-family: Arial, sans-serif;
 }
 
-h2 {
+.no-seat-title {
   color: #333;
   margin-bottom: 20px;
   text-align: center;
 }
 
-.student-grid {
+/* Grid for Student Cards */
+.no-seat-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 20px;
 }
 
-.student-card {
+/* Student Card */
+.no-seat-card {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -24,7 +26,8 @@ h2 {
   box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
-.student-image {
+/* Student Image */
+.no-seat-image {
   width: 140px;
   height: 140px;
   border-radius: 50%;
@@ -32,7 +35,8 @@ h2 {
   margin-bottom: 10px;
 }
 
-.placeholder {
+/* Placeholder for Missing Image */
+.no-seat-placeholder {
   width: 140px;
   height: 140px;
   border-radius: 50%;
@@ -40,13 +44,14 @@ h2 {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10px;
-  color: #fff;
+  margin: auto;
+  color: #666;
   font-size: 2em;
   position: relative;
+  margin-bottom: 10px;
 }
 
-.placeholder span {
+.no-seat-placeholder span {
   position: absolute;
   bottom: 5px;
   right: 5px;
@@ -54,12 +59,15 @@ h2 {
   color: #666;
 }
 
-.student-card p {
+/* Card Text */
+.no-seat-card p {
   margin: 5px 0;
   color: #333;
+  font-size: 14px;
 }
 
-.allot-seat-btn {
+/* Button */
+.no-seat-button {
   background-color: #1a73e8;
   color: #fff;
   border: none;
@@ -67,8 +75,42 @@ h2 {
   border-radius: 5px;
   cursor: pointer;
   width: 100%;
+  transition: background-color 0.3s ease;
 }
 
-.allot-seat-btn:hover {
+.no-seat-button:hover {
   background-color: #1557b0;
+}
+
+/* Responsive: 2 cards per row in mobile view */
+@media (max-width: 768px) {
+  .no-seat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .no-seat-grid {
+   grid-template-columns: repeat(2, 1fr);
+   width: 50px;
+  }
+
+  .no-seat-card {
+    width: 120px;
+  }
+
+  .no-seat-image,
+  .no-seat-placeholder {
+    width: 120px;
+    height: 120px;
+  }
+
+  .no-seat-card p {
+    font-size: 13px;
+  }
+
+  .no-seat-button {
+    padding: 7px 14px;
+    font-size: 13px;
+  }
 }

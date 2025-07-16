@@ -11,6 +11,8 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .header h2 {
@@ -78,6 +80,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.task-content {
+  flex: 1 1 60%;
 }
 
 .task-content h3 {
@@ -92,6 +100,7 @@
 .task-actions {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
 }
 
 .status {
@@ -99,13 +108,14 @@
   background-color: #4caf50;
   color: #fff;
   border-radius: 5px;
+  font-size: 0.9em;
 }
 
 .edit-btn {
   background-color: #ffca28;
   color: #333;
   border: none;
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -114,7 +124,7 @@
   background-color: #4caf50;
   color: #fff;
   border: none;
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 5px;
   cursor: pointer;
 }
@@ -123,7 +133,49 @@
   background-color: #f44336;
   color: #fff;
   border: none;
-  padding: 5px 10px;
+  padding: 6px 12px;
   border-radius: 5px;
   cursor: pointer;
+}
+
+/* ✅ Responsive Adjustments */
+@media (max-width: 768px) {
+  .header h2 {
+    font-size: 1.2em;
+  }
+
+  .dashboard-btn {
+    padding: 8px 16px;
+    font-size: 0.9em;
+  }
+
+  .task-form input,
+  .task-form button {
+    font-size: 0.95em;
+  }
+
+  .task-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .task-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .task-content h3 {
+    font-size: 1.1em;
+  }
+
+  .task-content p {
+    font-size: 0.95em;
+  }
+
+  .edit-btn,
+  .complete-btn,
+  .delete-btn {
+    padding: 6px 10px;
+    font-size: 0.85em;
+  }
 }

@@ -29,33 +29,35 @@ const  ManageFee = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button className="dashboard-btn">Dashboard</button>
+        
       </div>
-      <table>
-        <thead>
-          <tr>
-            <th>#</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Mobile</th>
-            <th>Manage</th>
-            <th>Modify</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredStudents.map(student => (
-            <tr key={student.id}>
-              <td>{student.id}</td>
-              <td>{student.name}</td>
-              <td>{student.email}</td>
-              <td>{student.mobile}</td>
-              <td><button className="manage-btn">Manage</button></td>
-              <td><button className="modify-btn">Modify</button></td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-    </div>
+    <div className="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Mobile</th>
+        <th>Manage</th>
+        <th>Modify</th>
+      </tr>
+    </thead>
+    <tbody>
+      {filteredStudents.map(student => (
+        <tr key={student.id}>
+          <td>{student.id}</td>
+          <td>{student.name}</td>
+          <td>{student.email}</td>
+          <td>{student.mobile}</td>
+          <td><button className="manage-btn">Manage</button></td>
+          <td><button className="modify-btn">Modify</button></td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+</div>
   );
 };
 

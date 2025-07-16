@@ -22,6 +22,7 @@ import NewStudents from './Pages/NewStudents';
 import StudentAttendanceReport from './Pages/StudentAttendanceReport';
 import StaffsDetail from './Pages/StaffsDetail'; // Make sure the filename matches
 import SettingsPage from './Pages/SettingsPage';
+import BulkMail from './Pages/BulkMail';
 
 
 
@@ -205,6 +206,15 @@ function App() {
     </Layout>
   }
 />
+<Route
+  path="/bulk-mail"
+  element={
+    <Layout>
+      <BulkMail />
+    </Layout>
+  }
+/>
+
 
 
         

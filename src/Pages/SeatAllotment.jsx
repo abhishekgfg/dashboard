@@ -49,7 +49,7 @@ const SeatAllotment = () => {
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
-        <button className="dashboard-btn">Dashboard</button>
+        {/* <button className="dashboard-btn">Dashboard</button> */}
       </div>
       {filteredSlots.map((slot, index) => (
         <div key={index} className="slot-section">

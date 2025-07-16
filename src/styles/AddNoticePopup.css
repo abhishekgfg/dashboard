@@ -16,19 +16,23 @@
   padding: 25px;
   border-radius: 8px;
   width: 400px;
+  max-width: 90%;
   position: relative;
+  box-sizing: border-box;
 }
 
 .popup-box h2 {
   margin-top: 0;
   margin-bottom: 20px;
   color: #333;
+  font-size: 20px;
 }
 
 .popup-box label {
   display: block;
   margin: 10px 0 5px;
   font-weight: bold;
+  font-size: 14px;
 }
 
 .popup-box input[type="text"],
@@ -37,7 +41,9 @@
 .popup-box input[type="file"] {
   width: 100%;
   padding: 8px;
+  font-size: 14px;
   box-sizing: border-box;
+  margin-bottom: 10px;
 }
 
 .submit-btn {
@@ -46,6 +52,7 @@
   background-color: #4CAF50;
   color: white;
   padding: 10px;
+  font-size: 15px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
@@ -61,10 +68,10 @@
   right: 15px;
   border: none;
   background: transparent;
-  font-size: 20px;
+  font-size: 22px;
   cursor: pointer;
+  color: #333;
 }
-
 
 .notice-list-section {
   margin-top: 20px;
@@ -77,6 +84,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
+  justify-content: center;
 }
 
 .notice-card {
@@ -86,11 +94,13 @@
   width: 220px;
   background: #fff;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-sizing: border-box;
 }
 
 .notice-card p {
   font-size: 14px;
   margin: 5px 0;
+  color: #333;
 }
 
 .notice-image {
@@ -101,7 +111,7 @@
 }
 
 .menu-item-btn {
-  background-color: #4CAF50; /* Fresh green */
+  background-color: #4CAF50;
   color: #fff;
   padding: 12px 24px;
   border: none;
@@ -114,11 +124,60 @@
 }
 
 .menu-item-btn:hover {
-  background-color: #45a049; /* Darker on hover */
-  transform: translateY(-2px); /* Slight lift effect */
+  background-color: #45a049;
+  transform: translateY(-2px);
 }
 
 .menu-item-btn:active {
   background-color: #3d8b40;
   transform: scale(0.98);
+}
+
+/* ✅ Responsive Styles for Mobile */
+@media (max-width: 600px) {
+  .popup-box {
+    width: 90%;
+    padding: 20px;
+  }
+
+  .popup-box h2 {
+    font-size: 18px;
+  }
+
+  .popup-box label {
+    font-size: 13px;
+  }
+
+  .popup-box input,
+  .popup-box textarea {
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    font-size: 14px;
+    padding: 9px;
+  }
+
+  .close-btn {
+    font-size: 20px;
+  }
+
+  .notice-card {
+    width: 100%;
+  }
+.notice-card {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .add-notice-btn {
+    width: 100%;
+    font-size: 15px;
+    padding: 10px;
+  }
+  .menu-item-btn {
+    width: 100%;
+    font-size: 15px;
+    padding: 10px;
+  }
 }

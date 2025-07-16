@@ -1,3 +1,4 @@
+/* Global Styles */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -5,89 +6,120 @@ body {
   background-color: #f4f4f4;
 }
 
+/* Container */
 .container {
-  width: 90%;
+  width: 100%;
+  
   margin: 20px auto;
   background-color: #fff;
   border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
+  overflow-x: auto;
+  animation: fadeIn 0.6s ease-in-out;
 }
 
-.header {
+/* Header */
+.header1 {
   background-color: #333;
   color: #fff;
-  padding: 10px 20px;
+  padding: 12px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  flex-wrap: wrap;
+  gap: 10px;
+  animation: slideDown 0.4s ease;
 }
 
-.header h2 {
+.header1 h2 {
   margin: 0;
   font-size: 24px;
+  flex: 1;
 }
 
 .header-actions {
   display: flex;
   align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
+/* Input */
 .header-actions input {
-  padding: 5px;
+  padding: 6px 10px;
   width: 200px;
   border: none;
-  border-radius: 3px;
-  margin-right: 10px;
+  border-radius: 4px;
   background-color: #fff;
   color: #333;
+  font-size: 14px;
+  transition: box-shadow 0.3s ease;
+}
+
+.header-actions input:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #4caf50;
+}
+
+/* Buttons */
+button {
+  padding: 7px 14px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  color: #fff;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .add-expense-btn {
-  padding: 5px 15px;
-  background-color: #4CAF50; /* Green */
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  margin-right: 10px;
+  background-color: #4CAF50;
 }
 
 .add-expense-btn:hover {
   background-color: #45a049;
+  transform: scale(1.05);
 }
 
 .dashboard-btn {
-  padding: 5px 15px;
-  background-color: #008CBA; /* Blue */
-  color: #fff;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
+  background-color: #008CBA;
 }
 
 .dashboard-btn:hover {
   background-color: #007B9A;
+  transform: scale(1.05);
 }
 
+.delete-btn {
+  background-color: #ff4500;
+  font-size: 12px;
+  padding: 6px 10px;
+}
+
+.delete-btn:hover {
+  background-color: #cc3700;
+}
+
+/* Table */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin: 0;
+  min-width: 600px;
 }
 
 th {
-  background-color: #007bff; /* Blue */
+  background-color: #007bff;
   color: #fff;
   padding: 12px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  font-size: 14px;
 }
 
 td {
   padding: 12px;
-  text-align: left;
+  font-size: 14px;
   border-bottom: 1px solid #ddd;
 }
 
@@ -99,20 +131,7 @@ tr:nth-child(odd) {
   background-color: #fff;
 }
 
-.delete-btn {
-  background-color: #ff4500; /* Orange-red */
-  color: #fff;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 3px;
-  cursor: pointer;
-  font-size: 12px;
-}
-
-.delete-btn:hover {
-  background-color: #cc3700;
-}
-
+/* Summary */
 .expense-summary {
   background-color: #f0f8ff;
   border: 1px solid #b0d4f1;
@@ -124,4 +143,145 @@ tr:nth-child(odd) {
   font-weight: 500;
   border-radius: 5px;
   color: #333;
+  animation: fadeIn 0.5s ease-in;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* ✅ Mobile Responsiveness */
+@media (max-width: 768px) {
+  .header1 {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+    
+  }
+
+  .header1 h2 {
+    font-size: 20px;
+    width: 100%;
+  }
+
+  .header-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .header-actions input {
+    width: 90%;
+  }
+
+  .add-expense-btn,
+  .dashboard-btn {
+    width: 100%;
+    font-size: 14px;
+  }
+
+  table {
+    min-width: unset;
+    font-size: 13px;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+
+  .expense-summary {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .header1 h2 {
+    font-size: 18px;
+  }
+
+  .header-actions input {
+    font-size: 13px;
+    padding: 5px 8px;
+  }
+
+  .add-expense-btn,
+  .dashboard-btn,
+  .delete-btn {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  .expense-summary {
+    font-size: 14px;
+  }
+}
+
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.table-wrapper table {
+  width: 100%;
+  min-width: 600px; /* Ensures table scrolls horizontally if it doesn't fit */
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+/* Optional: Button responsiveness */
+.delete-btn {
+  padding: 6px 12px;
+  font-size: 13px;
+  background-color: #ff4500;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #cc3700;
+}
+
+@media (max-width: 768px) {
+  .table-wrapper table {
+    font-size: 13px;
+  }
+
+  .delete-btn {
+    padding: 5px 8px;
+    font-size: 12px;
+  }
 }

@@ -6,7 +6,7 @@ body {
 }
 
 .container {
-  width: 90%;
+  width: 100%;
   margin: 20px auto;
   background-color: #fff;
   border-radius: 5px;
@@ -31,8 +31,8 @@ body {
   font-size: 24px;
 }
 
-.back-btn {
-  width: 10px; /* or any smaller fixed width */
+.back-btn1 {
+  width: 100px; /* or any smaller fixed width */
   padding: 5px;
   background-color: #008CBA;
   color: #fff;
