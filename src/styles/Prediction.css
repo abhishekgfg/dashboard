@@ -81,3 +81,18 @@
     font-size: 14px;
   }
 }
+
+
+.prediction-container.light {
+  background: #f9f9f9;
+  color: #222;
+}
+
+.prediction-container.dark {
+  background: #1e1e1e;
+  color: #f1f1f1;
+}
+
+.prediction-title {
+  margin-bottom: 16px;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import Chart from "react-apexcharts";
 import "../styles/Prediction.css";
+import { useTheme } from "../context/ThemeContext";
 
 // --- Static Data ---
 const profitabilityData = [
@@ -57,6 +58,7 @@ const incomeSourceDistributionData = [
 
 // --- Chart Configs ---
 const Prediction = () => {
+  const { theme } = useTheme(); 
   const getChartConfig = (xLabels, yTitle, yFormatter, max, type = "line") => ({
     chart: { toolbar: { show: false } },
     xaxis: { categories: xLabels, labels: { style: { colors: "#888" } } },

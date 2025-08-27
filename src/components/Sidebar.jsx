@@ -9,6 +9,7 @@ import { MdOutlineEventNote } from "react-icons/md";
 import { IoMdPersonAdd } from "react-icons/io";
 import "../styles/Sidebar.css";
 import { NavLink } from 'react-router-dom';
+import { useTheme } from "../context/ThemeContext";
 
 const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -16,6 +17,7 @@ const Sidebar = () => {
   const closeSidebar = () => {
     setIsOpen(false);
   };
+    const { theme, toggleTheme } = useTheme();
 
   return (
     <>
@@ -24,21 +26,23 @@ const Sidebar = () => {
         <FaBars className="mobile-header-icon" onClick={() => setIsOpen(!isOpen)} />
         <div className="mobile-header-title">Dashboard</div>
         <div className="mobile-header-actions">
-          <FaMoon className="mobile-header-icon moon" />
+           <button onClick={toggleTheme}>
+        {theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode"}
+      </button>
           <FaPowerOff className="mobile-header-icon power" />
         </div>
       </div>
 
       {/* ==== Sidebar ==== */}
       <div className={`sidebar-container ${isOpen ? "open" : ""}`}>
-        <div className="sidebar-close-btn" onClick={closeSidebar}>×</div>
+        <div className="sidebar-close-btn" onClick={closeSidebar}></div>
 
         <div className="profile-section">
           <FaUserCircle className="profile-icon" />
           <div className="profile-info">
             <h4>Abhishek Kumar</h4>
             <p>abhishek8579013@gmail.com</p>
-          </div>
+          </div>  
         </div>
 
         <div className="sidebar-menu scrollable">

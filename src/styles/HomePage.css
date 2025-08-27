@@ -4,9 +4,9 @@
   padding: 10px;
   /* padding-left: 40px; 👈 added extra left space */
   font-family: "Segoe UI", sans-serif;
-  background: #f4f7fe;
-  box-sizing: border-box;
-  margin-left: 10px;
+
+  
+  margin-left: -20px;
 }
 
 .top-row {

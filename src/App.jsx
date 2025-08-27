@@ -1,4 +1,5 @@
 // src/App.jsx
+import React, { useState } from "react"; 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 
@@ -23,6 +24,10 @@ import StudentAttendanceReport from './Pages/StudentAttendanceReport';
 import StaffsDetail from './Pages/StaffsDetail'; // Make sure the filename matches
 import SettingsPage from './Pages/SettingsPage';
 import BulkMail from './Pages/BulkMail';
+import "./App.css";
+import { ThemeProvider } from "./context/ThemeContext";
+
+import AuthPage from "./components/AuthPage";
 
 
 
@@ -33,17 +38,25 @@ import BulkMail from './Pages/BulkMail';
 
 
 function App() {
+
+
+   
+
+
   return (
+   <ThemeProvider> 
     <Router>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <Layout>
-              <HomePage />
-            </Layout>
-          }
-        />
+        <Route path="/auth" element={<AuthPage />} />
+     <Route
+            path="/"
+            element={
+              <Layout>
+              <HomePage  />
+ {/* 👈 pass function */}
+              </Layout>
+            }
+          />
         <Route
           path="/future-projection"
           element={
@@ -220,6 +233,7 @@ function App() {
         
       </Routes>
     </Router>
+       </ThemeProvider>
   );
 }
 

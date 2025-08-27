@@ -1,13 +1,18 @@
 import React from "react";
 import "../styles/HomePage.css";
+import { useTheme } from "../context/ThemeContext";
 import { BarChart, Bar, XAxis, YAxis, Tooltip, ResponsiveContainer } from "recharts";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useNavigate } from "react-router-dom";
+import { faUsers, faCheckCircle, faMale, faFemale } from "@fortawesome/free-solid-svg-icons";
+
 
 const HomePage = () => {
- 
+   const navigate = useNavigate();
   const seats = [
     1, 2, 3, 5, 6, 7, 8, 9, 10, 16, 17, 18, 101, 102, 103, 104, 105, 12,
   ];
-
+   const { theme, toggleTheme } = useTheme(); 
   const feeData = [
     { day: 2, amount: 1300 },
     { day: 10, amount: 600 },
@@ -41,43 +46,63 @@ const HomePage = () => {
           <button className="quick-btn purple">Self Registration</button>
             <div className="icon-group">
                 <span className="notification">22</span>
-                <span className="theme-icon">🌙</span>
-                <span className="power-icon">⏻</span>
+             <span className="theme-icon" onClick={toggleTheme}>
+              {theme === "light" ? "🌙" : "☀️"}
+            </span>
+                 <span
+      className="power-icon"
+      onClick={() => navigate("/auth")}
+      style={{ cursor: "pointer" }}
+    >
+      ⏻
+    </span>
             </div>
         </div>
       </div>
 
-      {/* 📊 Student Stats */}
-      <div className="stats-row single-row">
-        <div className="stat-card">
-          <div className="stat-icon">👥</div>
-          <div>
-            <h2>37</h2>
-            <p className="stat-name">Total Students</p>
-          </div>
-        </div>
-        <div className="stat-card">
-          <div className="stat-icon">✅</div>
-          <div>
-            <h2>26</h2>
-            <p className="stat-name">Active Students</p>
-          </div>
-        </div>
-        <div className="stat-card">
-          <div className="stat-icon">👦</div>
-          <div>
-            <h2>15</h2>
-            <p className="stat-name">Active Boys</p>
-          </div>
-        </div>
-        <div className="stat-card">
-          <div className="stat-icon">👧</div>
-          <div>
-            <h2>3</h2>
-            <p className="stat-name">Active Girls</p>
-          </div>
-        </div>
-      </div>
+{/* 📊 Student Stats */}
+<div className="stats-row single-row">
+  <div className="stat-card">
+    <div className="stat-icon users">
+      <FontAwesomeIcon icon={faUsers} />
+    </div>
+    <div>
+      <h2>37</h2>
+      <p className="stat-name">Total Students</p>
+    </div>
+  </div>
+
+  <div className="stat-card">
+    <div className="stat-icon active">
+      <FontAwesomeIcon icon={faCheckCircle} />
+    </div>
+    <div>
+      <h2>26</h2>
+      <p className="stat-name">Active Students</p>
+    </div>
+  </div>
+
+  <div className="stat-card">
+    <div className="stat-icon boys">
+      <FontAwesomeIcon icon={faMale} />
+    </div>
+    <div>
+      <h2>15</h2>
+      <p className="stat-name">Active Boys</p>
+    </div>
+  </div>
+
+  <div className="stat-card">
+    <div className="stat-icon girls">
+      <FontAwesomeIcon icon={faFemale} />
+    </div>
+    <div>
+      <h2>3</h2>
+      <p className="stat-name">Active Girls</p>
+    </div>
+  </div>
+</div>
+
 
       {/* ⚠️ Alert */}
       <div className="alert-banner">

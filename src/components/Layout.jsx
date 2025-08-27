@@ -3,10 +3,10 @@ import React from 'react';
 import Sidebar from './Sidebar';
 import '../styles/Layout.css';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, toggleTheme }) => {
   return (
     <div className="layout-wrapper">
-      <Sidebar />
+      <Sidebar toggleTheme={toggleTheme} />
       <div className="layout-content">
         {children}
       </div>
